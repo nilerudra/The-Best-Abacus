@@ -1,0 +1,9 @@
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\bin\Debug\abacus.exe
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\bin\Debug\abacus.pdb
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.Form1.resources
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.Properties.Resources.resources
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.csproj.GenerateResource.Cache
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.exe
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.pdb
+c:\users\aditya ramesh nikam\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.Form2.resources
+C:\Users\ADITYA RAMESH NIKAM\documents\visual studio 2010\Projects\abacus\abacus\obj\x86\Debug\abacus.csprojResolveAssemblyReference.cache
