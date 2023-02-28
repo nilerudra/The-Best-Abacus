@@ -1,0 +1,249 @@
+﻿namespace AbacusApp.UpdateMasters
+{
+    partial class frmEnquiryFollowup
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dgv_enqList = new System.Windows.Forms.DataGridView();
+            this.pnl_update = new System.Windows.Forms.Panel();
+            this.btn_procced = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.dtp_nextFollowupDate = new System.Windows.Forms.DateTimePicker();
+            this.lbl_nextFollowup = new System.Windows.Forms.Label();
+            this.chbox_notIntretsed = new System.Windows.Forms.CheckBox();
+            this.txt_contactNo = new System.Windows.Forms.TextBox();
+            this.txt_lastName = new System.Windows.Forms.TextBox();
+            this.txt_firstName = new System.Windows.Forms.TextBox();
+            this.lbl_contactNo = new System.Windows.Forms.Label();
+            this.lbl_update = new System.Windows.Forms.Label();
+            this.lbl_lastName = new System.Windows.Forms.Label();
+            this.lbl_firstName = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_enqList)).BeginInit();
+            this.pnl_update.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // dgv_enqList
+            // 
+            this.dgv_enqList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv_enqList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_enqList.Location = new System.Drawing.Point(72, 19);
+            this.dgv_enqList.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_enqList.Name = "dgv_enqList";
+            this.dgv_enqList.RowHeadersWidth = 82;
+            this.dgv_enqList.RowTemplate.Height = 41;
+            this.dgv_enqList.Size = new System.Drawing.Size(988, 351);
+            this.dgv_enqList.TabIndex = 0;
+            this.dgv_enqList.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_enqList_RowHeaderMouseDoubleClick);
+            // 
+            // pnl_update
+            // 
+            this.pnl_update.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_update.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_update.Controls.Add(this.btn_procced);
+            this.pnl_update.Controls.Add(this.btn_update);
+            this.pnl_update.Controls.Add(this.dtp_nextFollowupDate);
+            this.pnl_update.Controls.Add(this.lbl_nextFollowup);
+            this.pnl_update.Controls.Add(this.chbox_notIntretsed);
+            this.pnl_update.Controls.Add(this.txt_contactNo);
+            this.pnl_update.Controls.Add(this.txt_lastName);
+            this.pnl_update.Controls.Add(this.txt_firstName);
+            this.pnl_update.Controls.Add(this.lbl_contactNo);
+            this.pnl_update.Controls.Add(this.lbl_update);
+            this.pnl_update.Controls.Add(this.lbl_lastName);
+            this.pnl_update.Controls.Add(this.lbl_firstName);
+            this.pnl_update.Location = new System.Drawing.Point(72, 420);
+            this.pnl_update.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_update.Name = "pnl_update";
+            this.pnl_update.Size = new System.Drawing.Size(988, 291);
+            this.pnl_update.TabIndex = 1;
+            // 
+            // btn_procced
+            // 
+            this.btn_procced.Location = new System.Drawing.Point(719, 219);
+            this.btn_procced.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_procced.Name = "btn_procced";
+            this.btn_procced.Size = new System.Drawing.Size(199, 48);
+            this.btn_procced.TabIndex = 11;
+            this.btn_procced.Text = "Procced to Admission";
+            this.btn_procced.UseVisualStyleBackColor = true;
+            this.btn_procced.Click += new System.EventHandler(this.btn_procced_Click);
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(510, 219);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(169, 48);
+            this.btn_update.TabIndex = 10;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // dtp_nextFollowupDate
+            // 
+            this.dtp_nextFollowupDate.Checked = false;
+            this.dtp_nextFollowupDate.CustomFormat = "yyyy-MM-dd";
+            this.dtp_nextFollowupDate.Enabled = false;
+            this.dtp_nextFollowupDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_nextFollowupDate.Location = new System.Drawing.Point(710, 115);
+            this.dtp_nextFollowupDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtp_nextFollowupDate.Name = "dtp_nextFollowupDate";
+            this.dtp_nextFollowupDate.Size = new System.Drawing.Size(249, 31);
+            this.dtp_nextFollowupDate.TabIndex = 9;
+            // 
+            // lbl_nextFollowup
+            // 
+            this.lbl_nextFollowup.AutoSize = true;
+            this.lbl_nextFollowup.Location = new System.Drawing.Point(518, 120);
+            this.lbl_nextFollowup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_nextFollowup.Name = "lbl_nextFollowup";
+            this.lbl_nextFollowup.Size = new System.Drawing.Size(177, 25);
+            this.lbl_nextFollowup.TabIndex = 8;
+            this.lbl_nextFollowup.Text = "Next Followup Date :";
+            // 
+            // chbox_notIntretsed
+            // 
+            this.chbox_notIntretsed.AutoSize = true;
+            this.chbox_notIntretsed.Location = new System.Drawing.Point(525, 77);
+            this.chbox_notIntretsed.Margin = new System.Windows.Forms.Padding(2);
+            this.chbox_notIntretsed.Name = "chbox_notIntretsed";
+            this.chbox_notIntretsed.Size = new System.Drawing.Size(152, 29);
+            this.chbox_notIntretsed.TabIndex = 7;
+            this.chbox_notIntretsed.Text = "Not Interested";
+            this.chbox_notIntretsed.UseVisualStyleBackColor = true;
+            this.chbox_notIntretsed.CheckStateChanged += new System.EventHandler(this.chbox_notIntretsed_CheckStateChanged);
+            // 
+            // txt_contactNo
+            // 
+            this.txt_contactNo.Location = new System.Drawing.Point(188, 156);
+            this.txt_contactNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_contactNo.Name = "txt_contactNo";
+            this.txt_contactNo.Size = new System.Drawing.Size(249, 31);
+            this.txt_contactNo.TabIndex = 6;
+            // 
+            // txt_lastName
+            // 
+            this.txt_lastName.Location = new System.Drawing.Point(188, 112);
+            this.txt_lastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.Size = new System.Drawing.Size(249, 31);
+            this.txt_lastName.TabIndex = 5;
+            // 
+            // txt_firstName
+            // 
+            this.txt_firstName.Location = new System.Drawing.Point(188, 70);
+            this.txt_firstName.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_firstName.Name = "txt_firstName";
+            this.txt_firstName.Size = new System.Drawing.Size(249, 31);
+            this.txt_firstName.TabIndex = 4;
+            // 
+            // lbl_contactNo
+            // 
+            this.lbl_contactNo.AutoSize = true;
+            this.lbl_contactNo.Location = new System.Drawing.Point(62, 159);
+            this.lbl_contactNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_contactNo.Name = "lbl_contactNo";
+            this.lbl_contactNo.Size = new System.Drawing.Size(111, 25);
+            this.lbl_contactNo.TabIndex = 3;
+            this.lbl_contactNo.Text = "Contact No :";
+            // 
+            // lbl_update
+            // 
+            this.lbl_update.AutoSize = true;
+            this.lbl_update.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_update.ForeColor = System.Drawing.Color.White;
+            this.lbl_update.Location = new System.Drawing.Point(0, 0);
+            this.lbl_update.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_update.Name = "lbl_update";
+            this.lbl_update.Size = new System.Drawing.Size(205, 32);
+            this.lbl_update.TabIndex = 2;
+            this.lbl_update.Text = "Update Data Here";
+            // 
+            // lbl_lastName
+            // 
+            this.lbl_lastName.AutoSize = true;
+            this.lbl_lastName.Location = new System.Drawing.Point(69, 114);
+            this.lbl_lastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_lastName.Name = "lbl_lastName";
+            this.lbl_lastName.Size = new System.Drawing.Size(104, 25);
+            this.lbl_lastName.TabIndex = 1;
+            this.lbl_lastName.Text = "Last Name :";
+            // 
+            // lbl_firstName
+            // 
+            this.lbl_firstName.AutoSize = true;
+            this.lbl_firstName.Location = new System.Drawing.Point(67, 72);
+            this.lbl_firstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_firstName.Name = "lbl_firstName";
+            this.lbl_firstName.Size = new System.Drawing.Size(106, 25);
+            this.lbl_firstName.TabIndex = 0;
+            this.lbl_firstName.Text = "First Name :";
+            // 
+            // frmEnquiryFollowup
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1129, 755);
+            this.Controls.Add(this.pnl_update);
+            this.Controls.Add(this.dgv_enqList);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmEnquiryFollowup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Enquiry Followup";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmEnquiryFollowup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_enqList)).EndInit();
+            this.pnl_update.ResumeLayout(false);
+            this.pnl_update.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DataGridView dgv_enqList;
+        private Panel pnl_update;
+        private TextBox txt_contactNo;
+        private TextBox txt_lastName;
+        private TextBox txt_firstName;
+        private Label lbl_contactNo;
+        private Label lbl_update;
+        private Label lbl_lastName;
+        private Label lbl_firstName;
+        private DateTimePicker dtp_nextFollowupDate;
+        private Label lbl_nextFollowup;
+        private CheckBox chbox_notIntretsed;
+        private Button btn_update;
+        private Button btn_procced;
+    }
+}
