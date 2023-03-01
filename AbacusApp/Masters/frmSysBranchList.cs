@@ -27,8 +27,6 @@ namespace AbacusApp.SysBase
 
         private void frmSysBranchList_Load(object sender, EventArgs e)
         {
-            pnl_searchBy.Visible = false;
-            rbtn_name.Select();
             conn.Open();
             ad = new MySqlDataAdapter("Select * from branch_master where status = '" + 1 + "'", conn);
             ad.Fill(dt);
@@ -37,66 +35,23 @@ namespace AbacusApp.SysBase
             conn.Dispose();
         }
 
-        private void btn_newBranch_Click_1(object sender, EventArgs e)
+        private void btn_newBranch_Click(object sender, EventArgs e)
         {
             new frmRegBranch().Show();
             this.Hide();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            String s;
-            if(rbtn_addr.Checked == true)
-            {
-                s = "addr";
-            }
-            else if(rbtn_city.Checked == true)
-            {
-                s = "city";
-            }
-            else
-            {
-                s = "name";
-            }
-            (dgv_BranchList.DataSource as DataTable).DefaultView.RowFilter = String.Format(s +" like '%" + txt_search.Text + "%'");
+            (dgv_BranchList.DataSource as DataTable).DefaultView.RowFilter = String.Format("name like '%{0}%' OR city like '%{0}%' OR contact_person like '%{0}%' OR contact_no like '%{0}%' OR contact_email like '%{0}%' OR addr like '%{0}%'", txt_search.Text);
         }
 
-        private void dgv_BranchList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_searchBy_Click(object sender, EventArgs e)
-        {
-            
-            if(click)
-            {
-                pnl_searchBy.Visible = true;
-                click = false;
-            }
-            else
-            {
-                pnl_searchBy.Visible = false;
-                click = true;
-            }
-        }
-
-        private void btn_apply_Click(object sender, EventArgs e)
-        {
-            pnl_searchBy.Visible = false;
-        }
-
-        private void dgv_BranchList_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_BranchList_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             frmSysUpdateBranch up = new frmSysUpdateBranch();
-            up.GetData(dt,e.RowIndex);
+            up.GetData(dt, e.RowIndex);
             this.Hide();
             up.Show();
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
