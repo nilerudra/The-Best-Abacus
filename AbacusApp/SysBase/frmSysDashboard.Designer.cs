@@ -75,14 +75,14 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1120, 768);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 421);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -95,7 +95,7 @@
             this.pnl_header.Location = new System.Drawing.Point(0, 0);
             this.pnl_header.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(1120, 78);
+            this.pnl_header.Size = new System.Drawing.Size(784, 47);
             this.pnl_header.TabIndex = 0;
             // 
             // lbl_name
@@ -103,9 +103,10 @@
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(87, 12);
+            this.lbl_name.Location = new System.Drawing.Point(61, 7);
+            this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(194, 26);
+            this.lbl_name.Size = new System.Drawing.Size(131, 17);
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "The Best Abacus";
             this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
@@ -113,10 +114,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -125,10 +126,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 735);
+            this.panel1.Location = new System.Drawing.Point(0, 401);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1120, 33);
+            this.panel1.Size = new System.Drawing.Size(784, 20);
             this.panel1.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -144,8 +145,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.btn_techSupport, 9, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_siteManagement, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_enquiry, 6, 0);
@@ -157,12 +158,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btn_transaction, 8, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_publicConnect, 7, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 78);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 47);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1120, 58);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(784, 35);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // btn_techSupport
@@ -173,10 +174,10 @@
             this.btn_techSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_techSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_techSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_techSupport.Location = new System.Drawing.Point(1008, 0);
+            this.btn_techSupport.Location = new System.Drawing.Point(702, 0);
             this.btn_techSupport.Margin = new System.Windows.Forms.Padding(0);
             this.btn_techSupport.Name = "btn_techSupport";
-            this.btn_techSupport.Size = new System.Drawing.Size(112, 58);
+            this.btn_techSupport.Size = new System.Drawing.Size(82, 35);
             this.btn_techSupport.TabIndex = 9;
             this.btn_techSupport.Text = "TECH SUPPORT";
             this.btn_techSupport.UseVisualStyleBackColor = false;
@@ -190,10 +191,10 @@
             this.btn_siteManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_siteManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_siteManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_siteManagement.Location = new System.Drawing.Point(448, 0);
+            this.btn_siteManagement.Location = new System.Drawing.Point(312, 0);
             this.btn_siteManagement.Margin = new System.Windows.Forms.Padding(0);
             this.btn_siteManagement.Name = "btn_siteManagement";
-            this.btn_siteManagement.Size = new System.Drawing.Size(112, 58);
+            this.btn_siteManagement.Size = new System.Drawing.Size(78, 35);
             this.btn_siteManagement.TabIndex = 10;
             this.btn_siteManagement.Text = "SITE MANAGEMENT";
             this.btn_siteManagement.UseVisualStyleBackColor = false;
@@ -206,10 +207,10 @@
             this.btn_enquiry.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_enquiry.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_enquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_enquiry.Location = new System.Drawing.Point(672, 0);
+            this.btn_enquiry.Location = new System.Drawing.Point(468, 0);
             this.btn_enquiry.Margin = new System.Windows.Forms.Padding(0);
             this.btn_enquiry.Name = "btn_enquiry";
-            this.btn_enquiry.Size = new System.Drawing.Size(112, 58);
+            this.btn_enquiry.Size = new System.Drawing.Size(78, 35);
             this.btn_enquiry.TabIndex = 2;
             this.btn_enquiry.Text = "ENQUIRY";
             this.btn_enquiry.UseVisualStyleBackColor = false;
@@ -226,7 +227,7 @@
             this.btn_branches.Location = new System.Drawing.Point(0, 0);
             this.btn_branches.Margin = new System.Windows.Forms.Padding(0);
             this.btn_branches.Name = "btn_branches";
-            this.btn_branches.Size = new System.Drawing.Size(112, 58);
+            this.btn_branches.Size = new System.Drawing.Size(78, 35);
             this.btn_branches.TabIndex = 1;
             this.btn_branches.Text = "BRANCHES";
             this.btn_branches.UseVisualStyleBackColor = false;
@@ -240,10 +241,10 @@
             this.btn_exams.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_exams.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_exams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exams.Location = new System.Drawing.Point(112, 0);
+            this.btn_exams.Location = new System.Drawing.Point(78, 0);
             this.btn_exams.Margin = new System.Windows.Forms.Padding(0);
             this.btn_exams.Name = "btn_exams";
-            this.btn_exams.Size = new System.Drawing.Size(112, 58);
+            this.btn_exams.Size = new System.Drawing.Size(78, 35);
             this.btn_exams.TabIndex = 3;
             this.btn_exams.Text = "EXAMS";
             this.btn_exams.UseVisualStyleBackColor = false;
@@ -256,10 +257,10 @@
             this.btn_notification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_notification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_notification.Location = new System.Drawing.Point(560, 0);
+            this.btn_notification.Location = new System.Drawing.Point(390, 0);
             this.btn_notification.Margin = new System.Windows.Forms.Padding(0);
             this.btn_notification.Name = "btn_notification";
-            this.btn_notification.Size = new System.Drawing.Size(112, 58);
+            this.btn_notification.Size = new System.Drawing.Size(78, 35);
             this.btn_notification.TabIndex = 7;
             this.btn_notification.Text = "NOTIFICATION";
             this.btn_notification.UseVisualStyleBackColor = false;
@@ -272,13 +273,14 @@
             this.btn_competition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_competition.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_competition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_competition.Location = new System.Drawing.Point(224, 0);
+            this.btn_competition.Location = new System.Drawing.Point(156, 0);
             this.btn_competition.Margin = new System.Windows.Forms.Padding(0);
             this.btn_competition.Name = "btn_competition";
-            this.btn_competition.Size = new System.Drawing.Size(112, 58);
+            this.btn_competition.Size = new System.Drawing.Size(78, 35);
             this.btn_competition.TabIndex = 4;
             this.btn_competition.Text = "COMPETITION";
             this.btn_competition.UseVisualStyleBackColor = false;
+            this.btn_competition.Click += new System.EventHandler(this.btn_competition_Click);
             // 
             // btn_testSerise
             // 
@@ -288,13 +290,14 @@
             this.btn_testSerise.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_testSerise.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_testSerise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_testSerise.Location = new System.Drawing.Point(336, 0);
+            this.btn_testSerise.Location = new System.Drawing.Point(234, 0);
             this.btn_testSerise.Margin = new System.Windows.Forms.Padding(0);
             this.btn_testSerise.Name = "btn_testSerise";
-            this.btn_testSerise.Size = new System.Drawing.Size(112, 58);
+            this.btn_testSerise.Size = new System.Drawing.Size(78, 35);
             this.btn_testSerise.TabIndex = 5;
             this.btn_testSerise.Text = "TEST SERISE";
             this.btn_testSerise.UseVisualStyleBackColor = false;
+            this.btn_testSerise.Click += new System.EventHandler(this.btn_testSerise_Click);
             // 
             // btn_transaction
             // 
@@ -304,10 +307,10 @@
             this.btn_transaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_transaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_transaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_transaction.Location = new System.Drawing.Point(896, 0);
+            this.btn_transaction.Location = new System.Drawing.Point(624, 0);
             this.btn_transaction.Margin = new System.Windows.Forms.Padding(0);
             this.btn_transaction.Name = "btn_transaction";
-            this.btn_transaction.Size = new System.Drawing.Size(112, 58);
+            this.btn_transaction.Size = new System.Drawing.Size(78, 35);
             this.btn_transaction.TabIndex = 6;
             this.btn_transaction.Text = "TRANSACTION";
             this.btn_transaction.UseVisualStyleBackColor = false;
@@ -320,10 +323,10 @@
             this.btn_publicConnect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_publicConnect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_publicConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_publicConnect.Location = new System.Drawing.Point(784, 0);
+            this.btn_publicConnect.Location = new System.Drawing.Point(546, 0);
             this.btn_publicConnect.Margin = new System.Windows.Forms.Padding(0);
             this.btn_publicConnect.Name = "btn_publicConnect";
-            this.btn_publicConnect.Size = new System.Drawing.Size(112, 58);
+            this.btn_publicConnect.Size = new System.Drawing.Size(78, 35);
             this.btn_publicConnect.TabIndex = 8;
             this.btn_publicConnect.Text = "PUBLIC CONNECT";
             this.btn_publicConnect.UseVisualStyleBackColor = false;
@@ -361,7 +364,7 @@
             this.label1.Location = new System.Drawing.Point(114, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 26);
+            this.label1.Size = new System.Drawing.Size(131, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "The Best Abacus";
             // 
@@ -484,13 +487,13 @@
             // 
             // frmSysDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 768);
+            this.ClientSize = new System.Drawing.Size(784, 421);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSysDashboard";

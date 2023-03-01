@@ -1,4 +1,5 @@
-﻿using AbacusApp.UpdateMasters;
+﻿using AbacusApp.RegMasters;
+using AbacusApp.UpdateMasters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,19 @@ namespace AbacusApp.SysBase
         private void btn_techSupport_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_competition_Click(object sender, EventArgs e)
+        {
+            new frmRegStud().Show();
+            this.Hide();
+
+        }
+
+        private void btn_testSerise_Click(object sender, EventArgs e)
+        {
+            new frmRegEnquiry().Show();
+            this.Hide();
         }
     }
 }

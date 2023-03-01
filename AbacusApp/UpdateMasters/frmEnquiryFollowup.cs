@@ -19,6 +19,7 @@ namespace AbacusApp.UpdateMasters
         MySqlCommand cmd;
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
+        int index;
         public frmEnquiryFollowup()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace AbacusApp.UpdateMasters
         public void showStudent()
         {
             dt.Clear();
-            String que = "Select id, name, gender, contact, email, address, next_follow_up from enq_master where status = '" + 0 + "'";
+            String que = "Select id, name, gender, contact, email, address, rmk from enq_master where status = '" + 0 + "'";
 
             conn.Open();
             ad = new MySqlDataAdapter(que, conn);
@@ -42,14 +43,23 @@ namespace AbacusApp.UpdateMasters
             conn.Close();
         }
 
+
         private void dgv_enqList_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            String rmk = dt.Rows[e.RowIndex].ItemArray[6].ToString();
             pnl_update.Visible = true;
-            String na = dt.Rows[0].ItemArray[1].ToString();
+            String na = dt.Rows[e.RowIndex].ItemArray[1].ToString();
             String[] ar =na.Split(" ");
             txt_firstName.Text = ar[0];
             txt_lastName.Text = ar[1];
-            txt_contactNo.Text = dt.Rows[0].ItemArray[3].ToString();
+            txt_contactNo.Text = dt.Rows[e.RowIndex].ItemArray[3].ToString();
+            index = e.RowIndex;
+
+            if(rmk.Length > 0)
+            {
+                String[] remarks = rmk.Split(",");
+                txt_rmk.Text = remarks[remarks.Length - 1];
+            }
         }
 
         private void chbox_notIntretsed_CheckStateChanged(object sender, EventArgs e)
@@ -72,8 +82,8 @@ namespace AbacusApp.UpdateMasters
             DateTime d = new DateTime(dtp_nextFollowupDate.Value.Date.Ticks);
             String da = d.ToShortDateString().ToString();
 
-            int ids = int.Parse(dt.Rows[0].ItemArray[0].ToString());
-            String s = dt.Rows[0].ItemArray[6].ToString();
+            int ids = int.Parse(dt.Rows[index].ItemArray[0].ToString());
+            String s = dt.Rows[index].ItemArray[6].ToString();
 
 
             if (chbox_notIntretsed.Checked == true)
@@ -82,8 +92,14 @@ namespace AbacusApp.UpdateMasters
             }
             else
             {
-                que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "' where id =" + ids + "";
-
+                if(s.Length <= 0)
+                {
+                    que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "', rmk = '" + dtp_nextFollowupDate.Text + "'  where id =" + ids + "";
+                }
+                else
+                {
+                    que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "', rmk = '" + s + "," + dtp_nextFollowupDate.Text + "' where id =" + ids + "";
+                }
             }
 
             conn.Open();
@@ -91,12 +107,20 @@ namespace AbacusApp.UpdateMasters
             cmd.ExecuteNonQuery();
             conn.Close();
             conn.Dispose();
+            showStudent();
         }
 
         private void btn_procced_Click(object sender, EventArgs e)
         {
-            new frmAdmission().Show();
+            frmAdmission fd = new frmAdmission();
+            fd.getData(dt, index);
+            fd.Show();
             this.Hide();
+        }
+
+        private void dgv_enqList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

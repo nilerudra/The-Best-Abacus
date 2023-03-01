@@ -38,6 +38,8 @@ namespace AbacusApp.RegMasters
                 s = "Other";
             }
 
+            
+
             String que1 = "Insert into enq_master (name, contact, email, address, status, enq_type, branch_id,gender) " +
             "values('" + txt_name.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text+ "','" + 0 + "','Offline Enquiry'," + frmSysDashboard.id + ",'" + s + "')";
             conn.Open();
@@ -52,6 +54,11 @@ namespace AbacusApp.RegMasters
         }
 
         private void lbl_gender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmRegEnquiry_Load(object sender, EventArgs e)
         {
 
         }

@@ -205,6 +205,7 @@
             this.txt_pwd.Name = "txt_pwd";
             this.txt_pwd.Size = new System.Drawing.Size(215, 31);
             this.txt_pwd.TabIndex = 6;
+            this.txt_pwd.UseSystemPasswordChar = true;
             // 
             // txt_user
             // 
