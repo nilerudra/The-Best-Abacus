@@ -53,13 +53,8 @@ namespace AbacusApp.UpdateMasters
             txt_firstName.Text = ar[0];
             txt_lastName.Text = ar[1];
             txt_contactNo.Text = dt.Rows[e.RowIndex].ItemArray[3].ToString();
-            index = e.RowIndex;
-
-            if(rmk.Length > 0)
-            {
-                String[] remarks = rmk.Split(",");
-                txt_rmk.Text = remarks[remarks.Length - 1];
-            }
+            index = e.RowIndex;               
+            txt_rmk.Text = rmk;
         }
 
         private void chbox_notIntretsed_CheckStateChanged(object sender, EventArgs e)
@@ -92,14 +87,7 @@ namespace AbacusApp.UpdateMasters
             }
             else
             {
-                if(s.Length <= 0)
-                {
-                    que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "', rmk = '" + dtp_nextFollowupDate.Text + "'  where id =" + ids + "";
-                }
-                else
-                {
-                    que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "', rmk = '" + s + "," + dtp_nextFollowupDate.Text + "' where id =" + ids + "";
-                }
+                que = "update enq_master set next_follow_up='" + dtp_nextFollowupDate.Text + "', rmk = '" + txt_rmk.Text + "' where id =" + ids + "";
             }
 
             conn.Open();

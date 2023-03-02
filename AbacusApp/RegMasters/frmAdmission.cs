@@ -32,6 +32,22 @@ namespace AbacusApp.RegMasters
             txt_email.Text = dt.Rows[index].ItemArray[4].ToString();
             txt_addr.Text = dt.Rows[index].ItemArray[5].ToString();
             gen = dt.Rows[index].ItemArray[2].ToString();
+
+            DataTable dta = new DataTable();
+            string que = "Select name from city_master";
+            MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
+            //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
+            MySqlDataAdapter ad;
+            conn.Open();
+            ad = new MySqlDataAdapter(que, conn);
+            ad.Fill(dta);
+            int i = 0;
+            while (i < dta.Rows.Count)
+            {
+                cmbo_city.Items.Add(dta.Rows[i].ItemArray[0]);
+                i++;
+            }
+            conn.Close();
         }
 
         public void getData(DataTable dtt, int i)
@@ -44,7 +60,7 @@ namespace AbacusApp.RegMasters
         {
             String que = "Update enq_master set rmk = 'Admitted By " + frmSysDashboard.name + "', status = '1' where id = " + int.Parse(dt.Rows[index].ItemArray[0].ToString());
             String que2 = "INSERT INTO stud_profile (first_name, middle_name, last_name, contact_no, email_id, addr, gender, pwd, branch_id, city_name, current_subscrp_id, status) " +
-            "values ('" + txt_fname.Text + "','" + txt_mname.Text + "','" + txt_lname.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + gen + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + txt_city.Text + "'," + 0 + ",'" + 1 + "')";
+            "values ('" + txt_fname.Text + "','" + txt_mname.Text + "','" + txt_lname.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + gen + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + cmbo_city.Text + "'," + 0 + ",'" + 1 + "')";
             
             
             MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");

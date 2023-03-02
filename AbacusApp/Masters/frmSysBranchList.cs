@@ -30,7 +30,7 @@ namespace AbacusApp.SysBase
             conn.Open();
             ad = new MySqlDataAdapter("Select * from branch_master where status = '" + 1 + "'", conn);
             ad.Fill(dt);
-            dgv_BranchList.DataSource = dt; 
+            dgv_BranchList.DataSource = dt;
             conn.Close();
             conn.Dispose();
         }
