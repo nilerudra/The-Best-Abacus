@@ -4,6 +4,12 @@
     <Compile Update="Masters\frmSysBranchList.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Masters\frmSysContactUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Masters\frmSysShowMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="RegMasters\frmAdmission.cs">
       <SubType>Form</SubType>
     </Compile>

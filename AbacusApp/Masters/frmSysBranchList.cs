@@ -53,5 +53,11 @@ namespace AbacusApp.SysBase
             this.Hide();
             up.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new frmSysDashboard().Show();
+        }
     }
 }

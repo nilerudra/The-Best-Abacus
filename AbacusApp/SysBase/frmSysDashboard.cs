@@ -1,4 +1,5 @@
-﻿using AbacusApp.RegMasters;
+﻿using AbacusApp.Masters;
+using AbacusApp.RegMasters;
 using AbacusApp.UpdateMasters;
 using System;
 using System.Collections.Generic;
@@ -80,6 +81,12 @@ namespace AbacusApp.SysBase
         {
             new frmRegEnquiry().Show();
             this.Hide();
+        }
+
+        private void btn_publicConnect_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new frmSysContactUs().Show();
         }
     }
 }

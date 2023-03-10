@@ -132,3 +132,5 @@ D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\ref
 D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.pdb
 D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.genruntimeconfig.cache
 D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\ref\AbacusApp.dll
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysContactUs.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysShowMsg.resources
