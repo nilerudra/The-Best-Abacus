@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AbacusApp.SysBase;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,21 +26,48 @@ namespace AbacusApp.Masters
 
         private void frmSysContactUs_Load(object sender, EventArgs e)
         {
-            String que = "Select name, email, contact, subject, reg_date from contact_us where status = '0'";
-            conn.Open();
+            String que = "Select * from contact_us";
             ad = new MySqlDataAdapter(que, conn);
             ad.Fill(dt);
             dgv_contactUs.DataSource = dt;
-            conn.Close();
-            conn.Dispose();
+            dgv_contactUs.Columns[5].Visible = false;
+            dgv_contactUs.Columns[0].Visible = false;
+            dgv_contactUs.Columns[7].Visible = false;
+
+
+
+            for (int i = 0; i < dgv_contactUs.Rows.Count; i++)
+            {
+                if (dgv_contactUs.Rows[i].Cells[7].Value.ToString()=="0")
+                {
+                    dgv_contactUs.Rows[i].DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                }
+                else
+                {
+                    dgv_contactUs.Rows[i].DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                }
+            }
         }
 
         private void dgv_contactUs_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.Hide();
+            int id = int.Parse(dt.Rows[e.RowIndex].ItemArray[0].ToString());
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("update contact_us set status = '1' where id = " + id +"" , conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
             frmSysShowMsg msg = new frmSysShowMsg();
             msg.GetData(dt);
-            msg.Show();
+            msg.ShowDialog();
+            msg.Dispose();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            frmSysDashboard d = new frmSysDashboard();
+            this.Hide();
+            d.Show();
         }
     }
 }

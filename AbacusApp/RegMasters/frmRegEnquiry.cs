@@ -38,19 +38,17 @@ namespace AbacusApp.RegMasters
                 s = "Other";
             }
 
-            
+            String name = txt_name.Text.Trim() + " " + txt_lastName.Text.Trim();
 
             String que1 = "Insert into enq_master (name, contact, email, address, status, enq_type, branch_id,gender) " +
-            "values('" + txt_name.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text+ "','" + 0 + "','Offline Enquiry'," + frmSysDashboard.id + ",'" + s + "')";
+            "values('" + name + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text+ "','" + 0 + "','Offline Enquiry'," + frmSysDashboard.profile_id + ",'" + s + "')";
             conn.Open();
             cmd = new MySqlCommand(que1, conn);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
-
-            this.Hide();
-            new frmSysDashboard().Show();
+            this.Dispose();
         }
 
         private void lbl_gender_Click(object sender, EventArgs e)

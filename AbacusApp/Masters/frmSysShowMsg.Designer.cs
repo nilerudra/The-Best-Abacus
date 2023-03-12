@@ -34,13 +34,14 @@
             this.lbl_Subject = new System.Windows.Forms.Label();
             this.txt_msg = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_ok = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_name.Location = new System.Drawing.Point(307, 228);
+            this.lbl_name.Location = new System.Drawing.Point(129, 185);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(126, 45);
             this.lbl_name.TabIndex = 0;
@@ -48,14 +49,14 @@
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(454, 235);
+            this.txt_name.Location = new System.Drawing.Point(276, 192);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(380, 39);
             this.txt_name.TabIndex = 1;
             // 
             // txt_subject
             // 
-            this.txt_subject.Location = new System.Drawing.Point(454, 298);
+            this.txt_subject.Location = new System.Drawing.Point(276, 255);
             this.txt_subject.Name = "txt_subject";
             this.txt_subject.Size = new System.Drawing.Size(380, 39);
             this.txt_subject.TabIndex = 3;
@@ -64,7 +65,7 @@
             // 
             this.lbl_Subject.AutoSize = true;
             this.lbl_Subject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Subject.Location = new System.Drawing.Point(285, 291);
+            this.lbl_Subject.Location = new System.Drawing.Point(107, 248);
             this.lbl_Subject.Name = "lbl_Subject";
             this.lbl_Subject.Size = new System.Drawing.Size(148, 45);
             this.lbl_Subject.TabIndex = 2;
@@ -72,7 +73,7 @@
             // 
             // txt_msg
             // 
-            this.txt_msg.Location = new System.Drawing.Point(454, 370);
+            this.txt_msg.Location = new System.Drawing.Point(276, 327);
             this.txt_msg.Multiline = true;
             this.txt_msg.Name = "txt_msg";
             this.txt_msg.Size = new System.Drawing.Size(380, 160);
@@ -82,24 +83,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(265, 363);
+            this.label1.Location = new System.Drawing.Point(87, 320);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 45);
             this.label1.TabIndex = 4;
             this.label1.Text = "Message :";
             // 
+            // btn_ok
+            // 
+            this.btn_ok.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ok.Location = new System.Drawing.Point(201, 552);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(261, 60);
+            this.btn_ok.TabIndex = 6;
+            this.btn_ok.Text = "OK";
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            // 
             // frmSysShowMsg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 935);
+            this.ClientSize = new System.Drawing.Size(739, 810);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.txt_msg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_subject);
             this.Controls.Add(this.lbl_Subject);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_name);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSysShowMsg";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSysShowMsg";
             this.Load += new System.EventHandler(this.frmSysShowMsg_Load);
             this.ResumeLayout(false);
@@ -115,5 +131,6 @@
         private Label lbl_Subject;
         private TextBox txt_msg;
         private Label label1;
+        private Button btn_ok;
     }
 }

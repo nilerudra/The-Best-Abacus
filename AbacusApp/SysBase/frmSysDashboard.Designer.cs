@@ -248,6 +248,7 @@
             this.btn_exams.TabIndex = 3;
             this.btn_exams.Text = "EXAMS";
             this.btn_exams.UseVisualStyleBackColor = false;
+            this.btn_exams.Click += new System.EventHandler(this.btn_exams_Click);
             // 
             // btn_notification
             // 
@@ -264,6 +265,7 @@
             this.btn_notification.TabIndex = 7;
             this.btn_notification.Text = "NOTIFICATION";
             this.btn_notification.UseVisualStyleBackColor = false;
+            this.btn_notification.Click += new System.EventHandler(this.btn_notification_Click);
             // 
             // btn_competition
             // 
@@ -314,6 +316,7 @@
             this.btn_transaction.TabIndex = 6;
             this.btn_transaction.Text = "TRANSACTION";
             this.btn_transaction.UseVisualStyleBackColor = false;
+            this.btn_transaction.Click += new System.EventHandler(this.btn_transaction_Click);
             // 
             // btn_publicConnect
             // 

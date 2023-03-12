@@ -41,6 +41,12 @@ namespace AbacusApp.UpdateMasters
             ad.Fill(dt);
             dgv_enqList.DataSource = dt;
             conn.Close();
+            dgv_enqList.Columns[0].Visible = false;
+
+            txt_contactNo.Text = "";
+            txt_firstName.Text = "";
+            txt_lastName.Text = "";
+            txt_rmk.Text = "";
         }
 
 
@@ -53,8 +59,15 @@ namespace AbacusApp.UpdateMasters
             txt_firstName.Text = ar[0];
             txt_lastName.Text = ar[1];
             txt_contactNo.Text = dt.Rows[e.RowIndex].ItemArray[3].ToString();
-            index = e.RowIndex;               
-            txt_rmk.Text = rmk;
+            index = e.RowIndex;
+            if(rmk.Length > 0)
+            {
+                txt_rmk.Text = rmk + ", ";
+            }
+            else
+            {
+                txt_rmk.Text = rmk;
+            }
         }
 
         private void chbox_notIntretsed_CheckStateChanged(object sender, EventArgs e)
@@ -101,9 +114,9 @@ namespace AbacusApp.UpdateMasters
         private void btn_procced_Click(object sender, EventArgs e)
         {
             frmAdmission fd = new frmAdmission();
-            fd.getData(dt, index);
-            fd.Show();
-            this.Hide();
+            fd.getData(dt, index, txt_rmk.Text, this);
+            fd.ShowDialog();
+            fd.Dispose();
         }
 
         private void dgv_enqList_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using AbacusApp.SysBase;
+using AbacusApp.UpdateMasters;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,9 @@ namespace AbacusApp.RegMasters
         DataTable dt = new DataTable();
         int index;
         String gen;
+        String remark;
+        frmEnquiryFollowup fr;
+
         public frmAdmission()
         {
             InitializeComponent();
@@ -49,18 +53,19 @@ namespace AbacusApp.RegMasters
             }
             conn.Close();
         }
-
-        public void getData(DataTable dtt, int i)
+        public void getData(DataTable dtt, int i, String s, frmEnquiryFollowup e)
         {
             dt = dtt;
             index = i;
+            remark = s;
+            fr = e;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String que = "Update enq_master set rmk = 'Admitted By " + frmSysDashboard.name + "', status = '1' where id = " + int.Parse(dt.Rows[index].ItemArray[0].ToString());
+            String que = "Update enq_master set rmk = '" + remark + ", Admitted By " + frmSysDashboard.name + "', status = '1' where id = " + int.Parse(dt.Rows[index].ItemArray[0].ToString());
             String que2 = "INSERT INTO stud_profile (first_name, middle_name, last_name, contact_no, email_id, addr, gender, pwd, branch_id, city_name, current_subscrp_id, status) " +
-            "values ('" + txt_fname.Text + "','" + txt_mname.Text + "','" + txt_lname.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + gen + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + cmbo_city.Text + "'," + 0 + ",'" + 1 + "')";
+            "values ('" + txt_fname.Text + "','" + txt_mname.Text + "','" + txt_lname.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + gen + "','" + 12345 + "'," + frmSysDashboard.profile_id + ",'" + cmbo_city.Text + "'," + 0 + ",'" + 1 + "')";
             
             
             MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
@@ -75,9 +80,9 @@ namespace AbacusApp.RegMasters
             cmd.ExecuteNonQuery();
             conn.Close();
             conn.Dispose();
-
-
-            MessageBox.Show("Data Updated");
+            this.Dispose();
+            fr.showStudent();
+            
         }
 
         private void btn_back_Click(object sender, EventArgs e)

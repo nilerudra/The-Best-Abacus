@@ -15,11 +15,11 @@ namespace AbacusApp.SysBase
 {
     public partial class frmSysBranchList : Form
     {
-        bool click = true;  
+        bool click = true;
         MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
         MySqlDataAdapter ad;
-        DataTable dt = new DataTable(); 
+        DataTable dt = new DataTable();
         public frmSysBranchList()
         {
             InitializeComponent();
@@ -33,12 +33,15 @@ namespace AbacusApp.SysBase
             dgv_BranchList.DataSource = dt;
             conn.Close();
             conn.Dispose();
+            dgv_BranchList.Columns[0].Visible = false;
+            dgv_BranchList.Columns[7].Visible = false;
         }
 
         private void btn_newBranch_Click(object sender, EventArgs e)
         {
-            new frmRegBranch().Show();
-            this.Hide();
+            frmRegBranch freg = new frmRegBranch();
+            freg.ShowDialog();
+            freg.Dispose();
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -52,12 +55,6 @@ namespace AbacusApp.SysBase
             up.GetData(dt, e.RowIndex);
             this.Hide();
             up.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new frmSysDashboard().Show();
         }
     }
 }

@@ -24,9 +24,15 @@ namespace AbacusApp.Masters
 
         private void frmSysShowMsg_Load(object sender, EventArgs e)
         {
-            txt_name.Text = dt.Rows[0].ItemArray[0].ToString();
-            txt_subject.Text = dt.Rows[0].ItemArray[1].ToString();
-            txt_msg.Text = dt.Rows[0].ItemArray[2].ToString();
+            txt_name.Text = dt.Rows[0].ItemArray[1].ToString();
+            txt_subject.Text = dt.Rows[0].ItemArray[4].ToString();
+            txt_msg.Text = dt.Rows[0].ItemArray[5].ToString();
+        }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

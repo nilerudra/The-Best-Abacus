@@ -39,7 +39,7 @@ namespace AbacusApp.SysBase
             {
                 conn.Open();
 
-                String que = "Select id, name, role from lgn_master where usrid = '" + txt_user.Text + "'" + "and pwd = '" + txt_pwd.Text + "' and status = '" + 1 + "'";
+                String que = "Select id, name, role, profile_id from lgn_master where usrid = '" + txt_user.Text + "'" + "and pwd = '" + txt_pwd.Text + "' and status = '" + 1 + "'";
                 ad = new MySqlDataAdapter(que, conn);
                 ad.Fill(dt);
 
