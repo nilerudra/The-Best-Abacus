@@ -31,19 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSysDashboard));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnl_header = new System.Windows.Forms.Panel();
-            this.lbl_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_techSupport = new System.Windows.Forms.Button();
-            this.btn_siteManagement = new System.Windows.Forms.Button();
-            this.btn_enquiry = new System.Windows.Forms.Button();
-            this.btn_branches = new System.Windows.Forms.Button();
-            this.btn_exams = new System.Windows.Forms.Button();
-            this.btn_notification = new System.Windows.Forms.Button();
-            this.btn_competition = new System.Windows.Forms.Button();
-            this.btn_testSerise = new System.Windows.Forms.Button();
-            this.btn_transaction = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnl_menu = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_publicConnect = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,7 +51,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnl_menu.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,52 +66,38 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.pnl_header, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pnl_menu, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1456, 898);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 461);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pnl_header
             // 
             this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_header.Controls.Add(this.lbl_name);
             this.pnl_header.Controls.Add(this.pictureBox1);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_header.Location = new System.Drawing.Point(0, 0);
             this.pnl_header.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(1456, 100);
+            this.pnl_header.Size = new System.Drawing.Size(784, 75);
             this.pnl_header.TabIndex = 0;
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(113, 15);
-            this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(253, 33);
-            this.lbl_name.TabIndex = 1;
-            this.lbl_name.Text = "The Best Abacus";
-            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pictureBox1.Image = global::AbacusApp.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -125,215 +105,63 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 855);
+            this.panel1.Location = new System.Drawing.Point(0, 436);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1456, 43);
+            this.panel1.Size = new System.Drawing.Size(784, 25);
             this.panel1.TabIndex = 3;
             // 
-            // tableLayoutPanel3
+            // label2
             // 
-            this.tableLayoutPanel3.ColumnCount = 10;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel3.Controls.Add(this.btn_techSupport, 9, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_siteManagement, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_enquiry, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_branches, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_exams, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_notification, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_competition, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_testSerise, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_transaction, 8, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_publicConnect, 7, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 100);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1456, 75);
-            this.tableLayoutPanel3.TabIndex = 5;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(555, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(226, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Designed & Developed By - NATARAJ SERVICES";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btn_techSupport
+            // pnl_menu
             // 
-            this.btn_techSupport.BackColor = System.Drawing.Color.Silver;
-            this.btn_techSupport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_techSupport.FlatAppearance.BorderSize = 0;
-            this.btn_techSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_techSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_techSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_techSupport.Location = new System.Drawing.Point(1305, 0);
-            this.btn_techSupport.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_techSupport.Name = "btn_techSupport";
-            this.btn_techSupport.Size = new System.Drawing.Size(151, 75);
-            this.btn_techSupport.TabIndex = 9;
-            this.btn_techSupport.Text = "TECH SUPPORT";
-            this.btn_techSupport.UseVisualStyleBackColor = false;
-            this.btn_techSupport.Click += new System.EventHandler(this.btn_techSupport_Click);
+            this.pnl_menu.BackColor = System.Drawing.Color.Gray;
+            this.pnl_menu.Controls.Add(this.flowLayoutPanel1);
+            this.pnl_menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_menu.Location = new System.Drawing.Point(0, 75);
+            this.pnl_menu.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_menu.Name = "pnl_menu";
+            this.pnl_menu.Size = new System.Drawing.Size(784, 40);
+            this.pnl_menu.TabIndex = 4;
             // 
-            // btn_siteManagement
+            // flowLayoutPanel1
             // 
-            this.btn_siteManagement.BackColor = System.Drawing.Color.Silver;
-            this.btn_siteManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_siteManagement.FlatAppearance.BorderSize = 0;
-            this.btn_siteManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_siteManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_siteManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_siteManagement.Location = new System.Drawing.Point(580, 0);
-            this.btn_siteManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_siteManagement.Name = "btn_siteManagement";
-            this.btn_siteManagement.Size = new System.Drawing.Size(145, 75);
-            this.btn_siteManagement.TabIndex = 10;
-            this.btn_siteManagement.Text = "SITE MANAGEMENT";
-            this.btn_siteManagement.UseVisualStyleBackColor = false;
-            // 
-            // btn_enquiry
-            // 
-            this.btn_enquiry.BackColor = System.Drawing.Color.Silver;
-            this.btn_enquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_enquiry.FlatAppearance.BorderSize = 0;
-            this.btn_enquiry.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_enquiry.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_enquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_enquiry.Location = new System.Drawing.Point(870, 0);
-            this.btn_enquiry.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_enquiry.Name = "btn_enquiry";
-            this.btn_enquiry.Size = new System.Drawing.Size(145, 75);
-            this.btn_enquiry.TabIndex = 2;
-            this.btn_enquiry.Text = "ENQUIRY";
-            this.btn_enquiry.UseVisualStyleBackColor = false;
-            this.btn_enquiry.Click += new System.EventHandler(this.btn_enquiry_Click);
-            // 
-            // btn_branches
-            // 
-            this.btn_branches.BackColor = System.Drawing.Color.Silver;
-            this.btn_branches.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_branches.FlatAppearance.BorderSize = 0;
-            this.btn_branches.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_branches.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_branches.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_branches.Location = new System.Drawing.Point(0, 0);
-            this.btn_branches.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_branches.Name = "btn_branches";
-            this.btn_branches.Size = new System.Drawing.Size(145, 75);
-            this.btn_branches.TabIndex = 1;
-            this.btn_branches.Text = "BRANCHES";
-            this.btn_branches.UseVisualStyleBackColor = false;
-            this.btn_branches.Click += new System.EventHandler(this.btn_branches_Click);
-            // 
-            // btn_exams
-            // 
-            this.btn_exams.BackColor = System.Drawing.Color.Silver;
-            this.btn_exams.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_exams.FlatAppearance.BorderSize = 0;
-            this.btn_exams.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_exams.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_exams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exams.Location = new System.Drawing.Point(145, 0);
-            this.btn_exams.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_exams.Name = "btn_exams";
-            this.btn_exams.Size = new System.Drawing.Size(145, 75);
-            this.btn_exams.TabIndex = 3;
-            this.btn_exams.Text = "EXAMS";
-            this.btn_exams.UseVisualStyleBackColor = false;
-            this.btn_exams.Click += new System.EventHandler(this.btn_exams_Click);
-            // 
-            // btn_notification
-            // 
-            this.btn_notification.BackColor = System.Drawing.Color.Silver;
-            this.btn_notification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_notification.FlatAppearance.BorderSize = 0;
-            this.btn_notification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_notification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_notification.Location = new System.Drawing.Point(725, 0);
-            this.btn_notification.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_notification.Name = "btn_notification";
-            this.btn_notification.Size = new System.Drawing.Size(145, 75);
-            this.btn_notification.TabIndex = 7;
-            this.btn_notification.Text = "NOTIFICATION";
-            this.btn_notification.UseVisualStyleBackColor = false;
-            this.btn_notification.Click += new System.EventHandler(this.btn_notification_Click);
-            // 
-            // btn_competition
-            // 
-            this.btn_competition.BackColor = System.Drawing.Color.Silver;
-            this.btn_competition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_competition.FlatAppearance.BorderSize = 0;
-            this.btn_competition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_competition.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_competition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_competition.Location = new System.Drawing.Point(290, 0);
-            this.btn_competition.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_competition.Name = "btn_competition";
-            this.btn_competition.Size = new System.Drawing.Size(145, 75);
-            this.btn_competition.TabIndex = 4;
-            this.btn_competition.Text = "COMPETITION";
-            this.btn_competition.UseVisualStyleBackColor = false;
-            this.btn_competition.Click += new System.EventHandler(this.btn_competition_Click);
-            // 
-            // btn_testSerise
-            // 
-            this.btn_testSerise.BackColor = System.Drawing.Color.Silver;
-            this.btn_testSerise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_testSerise.FlatAppearance.BorderSize = 0;
-            this.btn_testSerise.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_testSerise.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_testSerise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_testSerise.Location = new System.Drawing.Point(435, 0);
-            this.btn_testSerise.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_testSerise.Name = "btn_testSerise";
-            this.btn_testSerise.Size = new System.Drawing.Size(145, 75);
-            this.btn_testSerise.TabIndex = 5;
-            this.btn_testSerise.Text = "TEST SERISE";
-            this.btn_testSerise.UseVisualStyleBackColor = false;
-            this.btn_testSerise.Click += new System.EventHandler(this.btn_testSerise_Click);
-            // 
-            // btn_transaction
-            // 
-            this.btn_transaction.BackColor = System.Drawing.Color.Silver;
-            this.btn_transaction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_transaction.FlatAppearance.BorderSize = 0;
-            this.btn_transaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_transaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btn_transaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_transaction.Location = new System.Drawing.Point(1160, 0);
-            this.btn_transaction.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_transaction.Name = "btn_transaction";
-            this.btn_transaction.Size = new System.Drawing.Size(145, 75);
-            this.btn_transaction.TabIndex = 6;
-            this.btn_transaction.Text = "TRANSACTION";
-            this.btn_transaction.UseVisualStyleBackColor = false;
-            this.btn_transaction.Click += new System.EventHandler(this.btn_transaction_Click);
+            this.flowLayoutPanel1.Controls.Add(this.btn_publicConnect);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(784, 40);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_publicConnect
             // 
             this.btn_publicConnect.BackColor = System.Drawing.Color.Silver;
-            this.btn_publicConnect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_publicConnect.FlatAppearance.BorderSize = 0;
-            this.btn_publicConnect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_publicConnect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btn_publicConnect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btn_publicConnect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_publicConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_publicConnect.Location = new System.Drawing.Point(1015, 0);
+            this.btn_publicConnect.Location = new System.Drawing.Point(0, 0);
             this.btn_publicConnect.Margin = new System.Windows.Forms.Padding(0);
             this.btn_publicConnect.Name = "btn_publicConnect";
-            this.btn_publicConnect.Size = new System.Drawing.Size(145, 75);
-            this.btn_publicConnect.TabIndex = 8;
-            this.btn_publicConnect.Text = "PUBLIC CONNECT";
+            this.btn_publicConnect.Size = new System.Drawing.Size(120, 40);
+            this.btn_publicConnect.TabIndex = 0;
+            this.btn_publicConnect.TabStop = false;
+            this.btn_publicConnect.Text = "Public Connect";
             this.btn_publicConnect.UseVisualStyleBackColor = false;
-            this.btn_publicConnect.Click += new System.EventHandler(this.btn_publicConnect_Click);
+            this.btn_publicConnect.Click += new System.EventHandler(this.btn_publicConnect_Click_1);
             // 
             // tableLayoutPanel2
             // 
@@ -368,7 +196,7 @@
             this.label1.Location = new System.Drawing.Point(114, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 33);
+            this.label1.Size = new System.Drawing.Size(131, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "The Best Abacus";
             // 
@@ -491,13 +319,13 @@
             // 
             // frmSysDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1456, 898);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSysDashboard";
@@ -507,9 +335,11 @@
             this.Load += new System.EventHandler(this.frmSysDashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
-            this.pnl_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.pnl_menu.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -523,19 +353,8 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel pnl_header;
-        private Button btn_branches;
-        private Button btn_enquiry;
-        private Label lbl_name;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Button btn_transaction;
-        private Button btn_testSerise;
-        private Button btn_competition;
-        private Button btn_exams;
-        private Button btn_siteManagement;
-        private Button btn_techSupport;
-        private Button btn_publicConnect;
-        private Button btn_notification;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel2;
         private Label label1;
@@ -547,6 +366,9 @@
         private Button button4;
         private Button button5;
         private Button button6;
-        private TableLayoutPanel tableLayoutPanel3;
+        private Label label2;
+        private Panel pnl_menu;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button btn_publicConnect;
     }
 }

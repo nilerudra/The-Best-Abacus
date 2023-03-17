@@ -19,6 +19,7 @@ namespace AbacusApp.SysBase
         public static int id;
         public static String name;
         public static int profile_id;
+
         public frmSysDashboard()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace AbacusApp.SysBase
             id = int.Parse(dt.Rows[0].ItemArray[0].ToString());
             name = dt.Rows[0]["Name"].ToString();
             profile_id = int.Parse(dt.Rows[0].ItemArray[3].ToString());
-            lbl_name.Text = name;
+            
         }
         private void frmSysDashboard_Load(object sender, EventArgs e)
         {
@@ -110,6 +111,15 @@ namespace AbacusApp.SysBase
             frmSysBranchSupport bsup = new frmSysBranchSupport();
             bsup.ShowDialog();  
             bsup.Dispose();
+        }
+
+        private void btn_publicConnect_Click_1(object sender, EventArgs e)
+        {
+            menuDashboards.frmPublicConnectDash a = new menuDashboards.frmPublicConnectDash();
+            a.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            a.StartPosition = FormStartPosition.CenterParent;
+            a.ShowDialog();
+            a.Dispose();
         }
     }
 }

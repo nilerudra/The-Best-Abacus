@@ -15,7 +15,6 @@ namespace AbacusApp.SysBase
 {
     public partial class frmSysBranchList : Form
     {
-        bool click = true;
         MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
         MySqlDataAdapter ad;

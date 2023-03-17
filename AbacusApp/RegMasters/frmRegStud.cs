@@ -32,12 +32,6 @@ namespace AbacusApp.RegMasters
 
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new frmSysDashboard().Show();
-        }
-
         private void btn_register_Click(object sender, EventArgs e)
         {
             String s = "";
@@ -55,7 +49,7 @@ namespace AbacusApp.RegMasters
             }
             
             String que = "INSERT INTO stud_profile (first_name, middle_name, last_name, contact_no, email_id, addr, gender, pwd, branch_id, city_name, current_subscrp_id, status) " +
-            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + txt_city.Text + "'," + 0 + ",'" + 1 + "')";
+            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + txt_city.Text + "'," + 1 + ",'" + 1 + "')";
             conn.Open();
             cmd = new MySqlCommand(que, conn);
             cmd.ExecuteNonQuery();
@@ -69,6 +63,7 @@ namespace AbacusApp.RegMasters
             cmd.Dispose();
             conn.Close();
             conn.Dispose();
+            this.Close();
         }
     }
 }

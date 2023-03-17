@@ -1537,11 +1537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OneDrive\\Documents\\git\\The-Best-Abacus\\AbacusApp\\AbacusApp.csproj",
+      "projectUniqueName": "D:\\OneDrive\\Documents\\GitHub\\PRJ-130\\AbacusApp\\AbacusApp.csproj",
       "projectName": "AbacusApp",
-      "projectPath": "D:\\OneDrive\\Documents\\git\\The-Best-Abacus\\AbacusApp\\AbacusApp.csproj",
+      "projectPath": "D:\\OneDrive\\Documents\\GitHub\\PRJ-130\\AbacusApp\\AbacusApp.csproj",
       "packagesPath": "C:\\Users\\gadget guru\\.nuget\\packages\\",
-      "outputPath": "D:\\OneDrive\\Documents\\git\\The-Best-Abacus\\AbacusApp\\obj\\",
+      "outputPath": "D:\\OneDrive\\Documents\\GitHub\\PRJ-130\\AbacusApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
