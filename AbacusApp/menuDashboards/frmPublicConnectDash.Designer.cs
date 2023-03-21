@@ -121,6 +121,7 @@
             this.btn_enquiries.TabStop = false;
             this.btn_enquiries.Text = "Enquiries";
             this.btn_enquiries.UseVisualStyleBackColor = false;
+            this.btn_enquiries.Click += new System.EventHandler(this.btn_enquiries_Click);
             // 
             // panel1
             // 
@@ -146,6 +147,7 @@
             this.btn_webContacts.TabStop = false;
             this.btn_webContacts.Text = "Web Contacts";
             this.btn_webContacts.UseVisualStyleBackColor = false;
+            this.btn_webContacts.Click += new System.EventHandler(this.btn_webContacts_Click);
             // 
             // frmPublicConnectDash
             // 

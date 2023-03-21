@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AbacusApp.SysBase;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace AbacusApp.Masters
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
-        ListView temp;
+        ListView temp = new ListView();
 
         public frmSysAdmittedStudLs()
         {
@@ -28,45 +29,67 @@ namespace AbacusApp.Masters
         {
             lsv_admittedStud.LargeImageList = imageList1;
             lsv_admittedStud.View = View.LargeIcon;
-//            bool flag = true;
-            for (int i = 0; i < dt.Rows.Count; i++)
+
+            if (SysBase.frmSysLogin.usrid == "admin")
             {
-                //if (dt.Rows[i].ItemArray[6].ToString() == "1" && dt.Rows[i].ItemArray[4].ToString() == "Male")
-                //{
-                //    String name = dt.Rows[i].ItemArray[1].ToString() + " " + dt.Rows[i].ItemArray[2].ToString() + " " + dt.Rows[i].ItemArray[3].ToString();
-                //    lsv_admittedStud.Items.Add(new ListViewItem(name, 2));
-                //    flag = false;
-                //}
-                //else
-                //{
-                //    String name = dt.Rows[i].ItemArray[1].ToString() + " " + dt.Rows[i].ItemArray[2].ToString() + " " + dt.Rows[i].ItemArray[3].ToString();
-                //    lsv_admittedStud.Items.Add(new ListViewItem(name, 3));
-                //    flag = false;
-                //}
-
-                //if (dt.Rows[i].ItemArray[6].ToString() == "1" && dt.Rows[i].ItemArray[4].ToString() == "Female")
-                //{
-                //    String name = dt.Rows[i].ItemArray[1].ToString() + " " + dt.Rows[i].ItemArray[2].ToString() + " " + dt.Rows[i].ItemArray[3].ToString();
-                //    lsv_admittedStud.Items.Add(new ListViewItem(name, 0));
-                //}
-
-                //else if(flag)
-                //{
-                //    String name = dt.Rows[i].ItemArray[1].ToString() + " " + dt.Rows[i].ItemArray[2].ToString() + " " + dt.Rows[i].ItemArray[3].ToString();
-                //    lsv_admittedStud.Items.Add(new ListViewItem(name, 1));
-                //}
-
-                ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
-                a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
-                lsv_admittedStud.Items.Add(a);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
+                    a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
+                    lsv_admittedStud.Items.Add(a);
+                }
             }
-            temp = lsv_admittedStud;
+            else
+            {
+                MessageBox.Show("HEllo");
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    MessageBox.Show(SysBase.frmSysDashboard.name + " " + dt.Rows[i].ItemArray[3].ToString());
+                    if (SysBase.frmSysDashboard.name == dt.Rows[i].ItemArray[3].ToString())
+                    {
+                        ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
+                        a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
+                        lsv_admittedStud.Items.Add(a);
+                    }
+                }
+            }
+            temp.Items.Clear();
+            for (int i = 0; i < lsv_admittedStud.Items.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)lsv_admittedStud.Items[i].Clone();
+                temp.Items.Add(item);
+            }
+        }
+
+        public void ShowBranches()
+        {
+            if (SysBase.frmSysLogin.usrid == "admin")
+            {
+                DataTable dtb = new DataTable();
+                string que = "Select name from branch_master";
+                conn.Open();
+                ad = new MySqlDataAdapter(que, conn);
+                ad.Fill(dtb);
+                int i = 0;
+                while (i < dt.Rows.Count)
+                {
+                    cmbo_branch.Items.Add(dt.Rows[i].ItemArray[0]);
+                    i++;
+                }
+                conn.Close();
+            }
+            else
+            {
+                cmbo_branch.Hide();
+            }
         }
 
         private void frmSysAdmittedStudLs_Load(object sender, EventArgs e)
         {
             ad = new MySqlDataAdapter("Select stud_profile.id,concat(first_name,' ',middle_name,' ',last_name) as name,IF(stud_profile.gender=\"Male\",\"male\",\"female\") as gender, branch_master.name,IF(stud_profile.status=1,\"active\",\"inactive\") as status from stud_profile\r\njoin branch_master on branch_master.id=stud_profile.branch_id", conn);
             ad.Fill(dt);
+            ShowBranches();
+            
             admittedStud();
 
         }
@@ -82,23 +105,55 @@ namespace AbacusApp.Masters
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ListView listView = lsv_admittedStud;
+            /*ListView listView = lsv_admittedStud;*/
             //MessageBox.Show(listView.Items[1].Text);
-            listView.Items.Clear();
+            lsv_admittedStud.Items.Clear();
             
-            foreach (ListViewItem item in temp.Items)
+            /*foreach (ListViewItem item in temp.Items)
             {
                 MessageBox.Show(item.Text.ToLower()+"   "+ textBox1.Text.ToLower());
 
                 if (item.Text.ToLower().Contains(textBox1.Text.ToLower()))
                 {
                     MessageBox.Show(item.Text.ToLower());
-                    listView.Items.Add(item);
+                    lsv_admittedStud.Items.Add(item);
+                    //MessageBox.Show(item.Text);
+                }
+            }*/
+            //MessageBox.Show(temp.Items.Count + "");
+
+            for(int i = 0; i < temp.Items.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)temp.Items[i].Clone();
+                //MessageBox.Show(item.Text.ToLower() + "   " + textBox1.Text.ToLower());
+
+                if (item.Text.ToLower().Contains(textBox1.Text.ToLower()))
+                {
+                    //MessageBox.Show(item.Text.ToLower());
+                    lsv_admittedStud.Items.Add(item);
                     //MessageBox.Show(item.Text);
                 }
             }
-            lsv_admittedStud.Clear();
-            lsv_admittedStud = listView;
+            //lsv_admittedStud.Clear();
+            //lsv_admittedStud = listView;
+        }
+
+        private void btn_promote_Click(object sender, EventArgs e)
+        {
+            Masters.frmSysPromoteLevel pl = new Masters.frmSysPromoteLevel();
+            pl.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            pl.StartPosition = FormStartPosition.CenterParent;
+            pl.ShowDialog();
+            pl.Dispose();
+        }
+
+        private void btn_shift_Click(object sender, EventArgs e)
+        {
+            Masters.frmSysStudBranchShift shift = new Masters.frmSysStudBranchShift();
+            shift.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            shift.StartPosition = FormStartPosition.CenterParent;
+            shift.ShowDialog();
+            shift.Dispose();
         }
     }
 }

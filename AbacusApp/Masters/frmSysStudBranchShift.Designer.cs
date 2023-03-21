@@ -40,9 +40,10 @@
             // 
             this.cmbo_branches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbo_branches.FormattingEnabled = true;
-            this.cmbo_branches.Location = new System.Drawing.Point(912, 64);
+            this.cmbo_branches.Location = new System.Drawing.Point(541, 30);
+            this.cmbo_branches.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cmbo_branches.Name = "cmbo_branches";
-            this.cmbo_branches.Size = new System.Drawing.Size(404, 40);
+            this.cmbo_branches.Size = new System.Drawing.Size(219, 23);
             this.cmbo_branches.TabIndex = 0;
             // 
             // lbl_selectBranch
@@ -50,9 +51,10 @@
             this.lbl_selectBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_selectBranch.AutoSize = true;
             this.lbl_selectBranch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_selectBranch.Location = new System.Drawing.Point(723, 59);
+            this.lbl_selectBranch.Location = new System.Drawing.Point(439, 28);
+            this.lbl_selectBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_selectBranch.Name = "lbl_selectBranch";
-            this.lbl_selectBranch.Size = new System.Drawing.Size(173, 45);
+            this.lbl_selectBranch.Size = new System.Drawing.Size(87, 21);
             this.lbl_selectBranch.TabIndex = 1;
             this.lbl_selectBranch.Text = "Branches :";
             // 
@@ -72,11 +74,12 @@
             this.dgv_studInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select});
             this.dgv_studInfo.GridColor = System.Drawing.Color.White;
-            this.dgv_studInfo.Location = new System.Drawing.Point(47, 182);
+            this.dgv_studInfo.Location = new System.Drawing.Point(25, 73);
+            this.dgv_studInfo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgv_studInfo.Name = "dgv_studInfo";
             this.dgv_studInfo.RowHeadersWidth = 60;
             this.dgv_studInfo.RowTemplate.Height = 41;
-            this.dgv_studInfo.Size = new System.Drawing.Size(1269, 447);
+            this.dgv_studInfo.Size = new System.Drawing.Size(735, 342);
             this.dgv_studInfo.TabIndex = 2;
             // 
             // select
@@ -91,9 +94,10 @@
             // 
             this.btn_shift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_shift.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_shift.Location = new System.Drawing.Point(1090, 679);
+            this.btn_shift.Location = new System.Drawing.Point(638, 424);
+            this.btn_shift.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_shift.Name = "btn_shift";
-            this.btn_shift.Size = new System.Drawing.Size(226, 60);
+            this.btn_shift.Size = new System.Drawing.Size(122, 28);
             this.btn_shift.TabIndex = 3;
             this.btn_shift.Text = "Shift";
             this.btn_shift.UseVisualStyleBackColor = true;
@@ -101,20 +105,21 @@
             // 
             // frmSysStudBranchShift
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 786);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.btn_shift);
             this.Controls.Add(this.dgv_studInfo);
             this.Controls.Add(this.lbl_selectBranch);
             this.Controls.Add(this.cmbo_branches);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSysStudBranchShift";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shift Branch";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSysStudBranchShift_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studInfo)).EndInit();
             this.ResumeLayout(false);

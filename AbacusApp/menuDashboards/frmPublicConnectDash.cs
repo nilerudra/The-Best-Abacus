@@ -30,5 +30,23 @@ namespace AbacusApp.menuDashboards
             adls.ShowDialog();
             adls.Dispose();
         }
+
+        private void btn_enquiries_Click(object sender, EventArgs e)
+        {
+            UpdateMasters.frmEnquiryFollowup enq = new UpdateMasters.frmEnquiryFollowup();
+            enq.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            enq.StartPosition = FormStartPosition.CenterParent;
+            enq.ShowDialog();
+            enq.Dispose();
+        }
+
+        private void btn_webContacts_Click(object sender, EventArgs e)
+        {
+            Masters.frmSysContactUs conus = new Masters.frmSysContactUs();
+            conus.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            conus.StartPosition = FormStartPosition.CenterParent;
+            conus.ShowDialog();
+            conus.Dispose();
+        }
     }
 }

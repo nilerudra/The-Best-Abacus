@@ -44,6 +44,7 @@
             this.lbl_update = new System.Windows.Forms.Label();
             this.lbl_lastName = new System.Windows.Forms.Label();
             this.lbl_firstName = new System.Windows.Forms.Label();
+            this.btn_enquiry = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_enqList)).BeginInit();
             this.pnl_update.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             this.pnl_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_update.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_update.Controls.Add(this.btn_enquiry);
             this.pnl_update.Controls.Add(this.txt_rmk);
             this.pnl_update.Controls.Add(this.lbn_rmk);
             this.pnl_update.Controls.Add(this.btn_procced);
@@ -116,7 +118,7 @@
             // btn_procced
             // 
             this.btn_procced.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_procced.Location = new System.Drawing.Point(585, 176);
+            this.btn_procced.Location = new System.Drawing.Point(563, 176);
             this.btn_procced.Margin = new System.Windows.Forms.Padding(1);
             this.btn_procced.Name = "btn_procced";
             this.btn_procced.Size = new System.Drawing.Size(139, 29);
@@ -128,7 +130,7 @@
             // btn_update
             // 
             this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_update.Location = new System.Drawing.Point(444, 176);
+            this.btn_update.Location = new System.Drawing.Point(429, 176);
             this.btn_update.Margin = new System.Windows.Forms.Padding(1);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 29);
@@ -248,6 +250,18 @@
             this.lbl_firstName.TabIndex = 0;
             this.lbl_firstName.Text = "First Name :";
             // 
+            // btn_enquiry
+            // 
+            this.btn_enquiry.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_enquiry.Location = new System.Drawing.Point(719, 176);
+            this.btn_enquiry.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_enquiry.Name = "btn_enquiry";
+            this.btn_enquiry.Size = new System.Drawing.Size(111, 29);
+            this.btn_enquiry.TabIndex = 14;
+            this.btn_enquiry.Text = "Enquiry";
+            this.btn_enquiry.UseVisualStyleBackColor = true;
+            this.btn_enquiry.Click += new System.EventHandler(this.btn_enquiry_Click);
+            // 
             // frmEnquiryFollowup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -263,7 +277,6 @@
             this.Name = "frmEnquiryFollowup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enquiry Followup";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEnquiryFollowup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_enqList)).EndInit();
             this.pnl_update.ResumeLayout(false);
@@ -290,5 +303,6 @@
         private Button btn_procced;
         private TextBox txt_rmk;
         private Label lbn_rmk;
+        private Button btn_enquiry;
     }
 }

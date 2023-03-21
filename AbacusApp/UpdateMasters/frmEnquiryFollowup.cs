@@ -123,5 +123,12 @@ namespace AbacusApp.UpdateMasters
         {
 
         }
+
+        private void btn_enquiry_Click(object sender, EventArgs e)
+        {
+            frmRegEnquiry enquiry = new frmRegEnquiry();
+            enquiry.ShowDialog();
+            enquiry.Dispose();
+        }
     }
 }

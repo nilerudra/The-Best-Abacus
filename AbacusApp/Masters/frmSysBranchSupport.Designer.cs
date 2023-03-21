@@ -52,12 +52,13 @@
             this.dgv_branchSupport.BackgroundColor = System.Drawing.Color.White;
             this.dgv_branchSupport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_branchSupport.GridColor = System.Drawing.Color.White;
-            this.dgv_branchSupport.Location = new System.Drawing.Point(43, 39);
+            this.dgv_branchSupport.Location = new System.Drawing.Point(23, 18);
+            this.dgv_branchSupport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgv_branchSupport.Name = "dgv_branchSupport";
             this.dgv_branchSupport.ReadOnly = true;
             this.dgv_branchSupport.RowHeadersWidth = 82;
             this.dgv_branchSupport.RowTemplate.Height = 41;
-            this.dgv_branchSupport.Size = new System.Drawing.Size(1293, 389);
+            this.dgv_branchSupport.Size = new System.Drawing.Size(735, 221);
             this.dgv_branchSupport.TabIndex = 1;
             // 
             // panel1
@@ -69,9 +70,10 @@
             this.panel1.Controls.Add(this.txt_msg);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl_reportProblem);
-            this.panel1.Location = new System.Drawing.Point(43, 471);
+            this.panel1.Location = new System.Drawing.Point(23, 257);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1293, 423);
+            this.panel1.Size = new System.Drawing.Size(735, 194);
             this.panel1.TabIndex = 2;
             // 
             // btn_report
@@ -80,9 +82,10 @@
             this.btn_report.FlatAppearance.BorderSize = 0;
             this.btn_report.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_report.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_report.Location = new System.Drawing.Point(1008, 326);
+            this.btn_report.Location = new System.Drawing.Point(562, 148);
+            this.btn_report.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_report.Name = "btn_report";
-            this.btn_report.Size = new System.Drawing.Size(237, 72);
+            this.btn_report.Size = new System.Drawing.Size(128, 34);
             this.btn_report.TabIndex = 3;
             this.btn_report.Text = "Report";
             this.btn_report.UseVisualStyleBackColor = true;
@@ -91,10 +94,11 @@
             // txt_msg
             // 
             this.txt_msg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txt_msg.Location = new System.Drawing.Point(334, 86);
+            this.txt_msg.Location = new System.Drawing.Point(199, 40);
+            this.txt_msg.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_msg.Multiline = true;
             this.txt_msg.Name = "txt_msg";
-            this.txt_msg.Size = new System.Drawing.Size(623, 194);
+            this.txt_msg.Size = new System.Drawing.Size(337, 88);
             this.txt_msg.TabIndex = 2;
             // 
             // label1
@@ -102,9 +106,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(160, 86);
+            this.label1.Location = new System.Drawing.Point(105, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 45);
+            this.label1.Size = new System.Drawing.Size(84, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Message :";
             // 
@@ -117,20 +122,22 @@
             this.lbl_reportProblem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_reportProblem.ForeColor = System.Drawing.Color.White;
             this.lbl_reportProblem.Location = new System.Drawing.Point(0, 0);
+            this.lbl_reportProblem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_reportProblem.Name = "lbl_reportProblem";
-            this.lbl_reportProblem.Size = new System.Drawing.Size(260, 45);
+            this.lbl_reportProblem.Size = new System.Drawing.Size(130, 21);
             this.lbl_reportProblem.TabIndex = 0;
             this.lbl_reportProblem.Text = "Report Problem";
             // 
             // frmSysBranchSupport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 930);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_branchSupport);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSysBranchSupport";

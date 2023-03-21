@@ -18,6 +18,7 @@ namespace AbacusApp.SysBase
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
+        public static String usrid = "";
         public frmSysLogin()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace AbacusApp.SysBase
             {
                 conn.Open();
 
-                String que = "Select id, name, role, profile_id from lgn_master where usrid = '" + txt_user.Text + "'" + "and pwd = '" + txt_pwd.Text + "' and status = '" + 1 + "'";
+                String que = "Select lgn_master.id, lgn_master.profile_id, branch_master.name from lgn_master join branch_master on lgn_master.profile_id = branch_master.id where usrid = '" + txt_user.Text + "'" + "and pwd = '" + txt_pwd.Text + "' and lgn_master.status = '" + 1 + "'";
                 ad = new MySqlDataAdapter(que, conn);
                 ad.Fill(dt);
 
@@ -56,10 +57,11 @@ namespace AbacusApp.SysBase
                 {
                     MessageBox.Show("Incorrect Username or Password !");
                 }
+                usrid = txt_user.Text;
             }
             catch (MySqlException sqe)
             {
-                MessageBox.Show("Internet Connection Error!! \n Please Connect To Internet.", "Error");
+                MessageBox.Show("Internet Connection Error!! \n Please Connect To Internet." + sqe, "Error");
             }
             finally
             {
