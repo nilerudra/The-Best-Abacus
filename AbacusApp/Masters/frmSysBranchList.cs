@@ -27,13 +27,22 @@ namespace AbacusApp.SysBase
         private void frmSysBranchList_Load(object sender, EventArgs e)
         {
             conn.Open();
-            ad = new MySqlDataAdapter("Select * from branch_master where status = '" + 1 + "'", conn);
+            ad = new MySqlDataAdapter("select id, name, city, contact_person, contact_no, contact_email, IF(status='1', \"active\",\"inactive\") as status, addr from branch_master", conn);
             ad.Fill(dt);
-            dgv_BranchList.DataSource = dt;
-            conn.Close();
-            conn.Dispose();
-            dgv_BranchList.Columns[0].Visible = false;
-            dgv_BranchList.Columns[7].Visible = false;
+            ShowBranch();
+        }
+
+        public void ShowBranch()
+        {
+            lsv_branchLs.LargeImageList = imageList1;
+            lsv_branchLs.View = View.LargeIcon;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
+                a.ImageKey = "branch_" + dt.Rows[i].ItemArray[6].ToString() + ".png";
+                lsv_branchLs.Items.Add(a);
+            }
         }
 
         private void btn_newBranch_Click(object sender, EventArgs e)
@@ -45,7 +54,7 @@ namespace AbacusApp.SysBase
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            (dgv_BranchList.DataSource as DataTable).DefaultView.RowFilter = String.Format("name like '%{0}%' OR city like '%{0}%' OR contact_person like '%{0}%' OR contact_no like '%{0}%' OR contact_email like '%{0}%' OR addr like '%{0}%'", txt_search.Text);
+       
         }
 
         private void dgv_BranchList_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)

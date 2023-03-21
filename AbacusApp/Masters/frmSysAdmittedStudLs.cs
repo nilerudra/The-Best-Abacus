@@ -105,37 +105,16 @@ namespace AbacusApp.Masters
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            /*ListView listView = lsv_admittedStud;*/
-            //MessageBox.Show(listView.Items[1].Text);
             lsv_admittedStud.Items.Clear();
-            
-            /*foreach (ListViewItem item in temp.Items)
-            {
-                MessageBox.Show(item.Text.ToLower()+"   "+ textBox1.Text.ToLower());
-
-                if (item.Text.ToLower().Contains(textBox1.Text.ToLower()))
-                {
-                    MessageBox.Show(item.Text.ToLower());
-                    lsv_admittedStud.Items.Add(item);
-                    //MessageBox.Show(item.Text);
-                }
-            }*/
-            //MessageBox.Show(temp.Items.Count + "");
-
             for(int i = 0; i < temp.Items.Count; i++)
             {
                 ListViewItem item = (ListViewItem)temp.Items[i].Clone();
-                //MessageBox.Show(item.Text.ToLower() + "   " + textBox1.Text.ToLower());
-
                 if (item.Text.ToLower().Contains(textBox1.Text.ToLower()))
                 {
-                    //MessageBox.Show(item.Text.ToLower());
                     lsv_admittedStud.Items.Add(item);
-                    //MessageBox.Show(item.Text);
                 }
             }
-            //lsv_admittedStud.Clear();
-            //lsv_admittedStud = listView;
+
         }
 
         private void btn_promote_Click(object sender, EventArgs e)

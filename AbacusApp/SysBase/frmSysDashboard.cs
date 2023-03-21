@@ -50,5 +50,14 @@ namespace AbacusApp.SysBase
             a.ShowDialog();
             a.Dispose();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmSysBranchList bl = new frmSysBranchList();
+            bl.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            bl.StartPosition = FormStartPosition.CenterParent;
+            bl.ShowDialog();
+            bl.Dispose();
+        }
     }
 }
