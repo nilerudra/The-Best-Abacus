@@ -25,26 +25,43 @@ namespace AbacusApp.Masters
             InitializeComponent();
         }
 
-        public void admittedStud()
+        public void admittedStud(int index, String name)
         {
+            lsv_admittedStud.Items.Clear();
             lsv_admittedStud.LargeImageList = imageList1;
             lsv_admittedStud.View = View.LargeIcon;
 
             if (SysBase.frmSysLogin.usrid == "admin")
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
+                if (name.Equals("All"))
                 {
-                    ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
-                    a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
-                    lsv_admittedStud.Items.Add(a);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
+                        a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
+                        lsv_admittedStud.Items.Add(a);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        //MessageBox.Show(dt.Rows[i].ItemArray[3].ToString() + " - " + name);
+                        if (dt.Rows[i].ItemArray[3].ToString().Equals(name))
+                        {
+                            ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
+                            a.ImageKey = dt.Rows[i].ItemArray[2].ToString() + "_" + dt.Rows[i].ItemArray[4].ToString() + ".png";
+                            lsv_admittedStud.Items.Add(a); 
+                        }
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("HEllo");
+                //MessageBox.Show("HEllo");
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    MessageBox.Show(SysBase.frmSysDashboard.name + " " + dt.Rows[i].ItemArray[3].ToString());
+                    //MessageBox.Show(SysBase.frmSysDashboard.name + " " + dt.Rows[i].ItemArray[3].ToString());
                     if (SysBase.frmSysDashboard.name == dt.Rows[i].ItemArray[3].ToString())
                     {
                         ListViewItem a = new ListViewItem(dt.Rows[i].ItemArray[1].ToString());
@@ -73,7 +90,7 @@ namespace AbacusApp.Masters
                 int i = 0;
                 while (i < dt.Rows.Count)
                 {
-                    cmbo_branch.Items.Add(dt.Rows[i].ItemArray[0]);
+                    cmbo_branch.Items.Add(dtb.Rows[i].ItemArray[0]);
                     i++;
                 }
                 conn.Close();
@@ -90,7 +107,7 @@ namespace AbacusApp.Masters
             ad.Fill(dt);
             ShowBranches();
             
-            admittedStud();
+            admittedStud(0,"All");
 
         }
 
@@ -114,7 +131,6 @@ namespace AbacusApp.Masters
                     lsv_admittedStud.Items.Add(item);
                 }
             }
-
         }
 
         private void btn_promote_Click(object sender, EventArgs e)
@@ -133,6 +149,12 @@ namespace AbacusApp.Masters
             shift.StartPosition = FormStartPosition.CenterParent;
             shift.ShowDialog();
             shift.Dispose();
+        }
+
+        private void cmbo_branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cmbo_branch.SelectedIndex + " - " + cmbo_branch.Text);
+            admittedStud(cmbo_branch.SelectedIndex, cmbo_branch.Text);
         }
     }
 }

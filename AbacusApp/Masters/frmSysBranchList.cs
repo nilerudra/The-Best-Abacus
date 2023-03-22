@@ -19,6 +19,7 @@ namespace AbacusApp.SysBase
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
+        ListView temp = new ListView();
         public frmSysBranchList()
         {
             InitializeComponent();
@@ -43,18 +44,34 @@ namespace AbacusApp.SysBase
                 a.ImageKey = "branch_" + dt.Rows[i].ItemArray[6].ToString() + ".png";
                 lsv_branchLs.Items.Add(a);
             }
+            temp.Items.Clear();
+            for (int i = 0; i < lsv_branchLs.Items.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)lsv_branchLs.Items[i].Clone();
+                temp.Items.Add(item);
+            }
         }
 
         private void btn_newBranch_Click(object sender, EventArgs e)
         {
-            frmRegBranch freg = new frmRegBranch();
-            freg.ShowDialog();
-            freg.Dispose();
+            RegMasters.frmRegBranch brh = new RegMasters.frmRegBranch();
+            //brh.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            brh.StartPosition = FormStartPosition.CenterParent;
+            brh.ShowDialog();
+            brh.Dispose();
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-       
+            lsv_branchLs.Items.Clear();
+            for (int i = 0; i < temp.Items.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)temp.Items[i].Clone();
+                if (item.Text.ToLower().Contains(txt_search.Text.ToLower()))
+                {
+                    lsv_branchLs.Items.Add(item);
+                }
+            }
         }
 
         private void dgv_BranchList_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
@@ -63,6 +80,24 @@ namespace AbacusApp.SysBase
             up.GetData(dt, e.RowIndex);
             this.Hide();
             up.Show();
+        }
+
+        private void lsv_branchLs_DoubleClick(object sender, EventArgs e)
+        {
+            //MessageBox.Show("hii");
+            ListView listView = (ListView)sender;
+            ListViewItem item = listView.HitTest(listView.PointToClient(Control.MousePosition)).Item;
+            //MessageBox.Show(item.Text);
+            if (item != null)
+            {
+                UpdateMasters.frmSysUpdateBranch update = new frmSysUpdateBranch();
+                //brh.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+                update.StartPosition = FormStartPosition.CenterParent;
+                //MessageBox.Show(item.Index + "");
+                update.GetData(dt, item.Index);
+                update.ShowDialog();
+                update.Dispose();
+            }
         }
     }
 }

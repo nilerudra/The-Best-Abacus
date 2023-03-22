@@ -41,9 +41,9 @@ namespace AbacusApp.UpdateMasters
             txt_contactPersonName.Text = dt.Rows[index].ItemArray[3].ToString();
             txt_contact.Text = dt.Rows[index].ItemArray[4].ToString();
             txt_email.Text = dt.Rows[index].ItemArray[5].ToString();
-            txt_addr.Text = dt.Rows[index].ItemArray[8].ToString();
+            txt_addr.Text = dt.Rows[index].ItemArray[7].ToString();
 
-            if(dt.Rows[index].ItemArray[7].ToString() == "1")
+            if(dt.Rows[index].ItemArray[6].ToString() == "active")
             {
                 cmbo_status.Text = "Active";
             }

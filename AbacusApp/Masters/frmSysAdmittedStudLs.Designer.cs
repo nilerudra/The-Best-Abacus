@@ -124,10 +124,13 @@
             // cmbo_branch
             // 
             this.cmbo_branch.FormattingEnabled = true;
+            this.cmbo_branch.Items.AddRange(new object[] {
+            "All"});
             this.cmbo_branch.Location = new System.Drawing.Point(84, 24);
             this.cmbo_branch.Name = "cmbo_branch";
             this.cmbo_branch.Size = new System.Drawing.Size(208, 23);
             this.cmbo_branch.TabIndex = 6;
+            this.cmbo_branch.SelectedIndexChanged += new System.EventHandler(this.cmbo_branch_SelectedIndexChanged);
             // 
             // frmSysAdmittedStudLs
             // 

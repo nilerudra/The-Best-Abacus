@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbo_branches = new System.Windows.Forms.ComboBox();
             this.lbl_selectBranch = new System.Windows.Forms.Label();
             this.dgv_studInfo = new System.Windows.Forms.DataGridView();
@@ -67,12 +68,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_studInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_studInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_studInfo.BackgroundColor = System.Drawing.Color.White;
             this.dgv_studInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgv_studInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_studInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_studInfo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_studInfo.GridColor = System.Drawing.Color.White;
             this.dgv_studInfo.Location = new System.Drawing.Point(25, 73);
             this.dgv_studInfo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -93,9 +101,10 @@
             // btn_shift
             // 
             this.btn_shift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_shift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_shift.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_shift.Location = new System.Drawing.Point(638, 424);
-            this.btn_shift.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_shift.Margin = new System.Windows.Forms.Padding(0);
             this.btn_shift.Name = "btn_shift";
             this.btn_shift.Size = new System.Drawing.Size(122, 28);
             this.btn_shift.TabIndex = 3;

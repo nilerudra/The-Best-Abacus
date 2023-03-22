@@ -42,9 +42,7 @@ namespace AbacusApp.Masters
             {
                 cmbo_levels.Items.Add(dt.Rows[i].ItemArray[1].ToString());
             }
-
             Refresh();
-
         }
 
         public void Refresh()
@@ -63,14 +61,17 @@ namespace AbacusApp.Masters
             dgv_Student.Columns[15].Visible = false;
         }
 
+
+
+
         private void cmbo_levels_SelectedIndexChanged(object sender, EventArgs e)
         {
-            show();
+            Refresh();
             cmb_Promote.Items.Clear();
             cmb_Promote.Text = "";
             int index = cmbo_levels.SelectedIndex;
             DataTable dt3 = new DataTable();
-            dt3 = dt2.Clone();
+            
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (i != index)
@@ -78,21 +79,25 @@ namespace AbacusApp.Masters
                     cmb_Promote.Items.Add(dt.Rows[i].ItemArray[1].ToString());
                 }
             }
+
+            dt3 = dt2.Clone();
             dt3.Clear();
-            int a = 0;
             for(int i = 0; i < dt2.Rows.Count; i++)
             {
-                //MessageBox.Show(dt2.Rows[i].ItemArray[13].ToString() + " " + cmbo_levels.SelectedIndex + 2);
-                if(int.Parse(dt2.Rows[i].ItemArray[13].ToString()) == cmbo_levels.SelectedIndex + 1)
+                //MessageBox.Show(dt2.Rows[i].ItemArray[13].ToString() + " - " + (cmbo_levels.SelectedIndex + 1));
+                if(int.Parse(dt2.Rows[i].ItemArray[13].ToString().Trim()) == (cmbo_levels.SelectedIndex + 1))
                 {
                     DataRow newRow = dt3.NewRow();
-                    newRow.ItemArray = dt2.Rows[a].ItemArray.Clone() as object[];
+                    newRow.ItemArray = dt2.Rows[i].ItemArray.Clone() as object[];
                     dt3.Rows.Add(newRow);
-                    a++;
                 }
             }
             dgv_Student.DataSource = dt3;
         }
+
+
+
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -110,7 +115,10 @@ namespace AbacusApp.Masters
             {
                 for(int i = 0; i < ls.Count; i++)
                 {
-                    String q = "Update stud_profile set current_subscrp_id = '" + cmb_Promote.SelectedIndex + 2 + "' where id = "+ ls[i] + "";
+                    String lvl = cmb_Promote.Text;
+                    String[] ar = lvl.Split('-');
+
+                    String q = "Update stud_profile set current_subscrp_id = '" + ar[1] + "' where id = "+ ls[i] + "";
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(q, conn);
                     cmd.ExecuteNonQuery();
