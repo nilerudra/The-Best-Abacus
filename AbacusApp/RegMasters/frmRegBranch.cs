@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AbacusApp.RegMasters
 {
@@ -27,9 +28,7 @@ namespace AbacusApp.RegMasters
 
         private void frmRegBranch_Load(object sender, EventArgs e)
         {
-            string que = "Select name from city_master";
-            conn.Open();
-            ad = new MySqlDataAdapter(que, conn);
+            ad = new MySqlDataAdapter("Select name from city_master", conn);
             ad.Fill(dt);
             int i = 0;
             while (i < dt.Rows.Count)
@@ -37,7 +36,6 @@ namespace AbacusApp.RegMasters
                 cmbo_city.Items.Add(dt.Rows[i].ItemArray[0]);
                 i++;
             }
-            conn.Close();
         }
 
         private void btn_back_Click(object sender, EventArgs e)

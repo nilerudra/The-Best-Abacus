@@ -59,5 +59,14 @@ namespace AbacusApp.SysBase
             bl.ShowDialog();
             bl.Dispose();
         }
+
+        private void btn_trans_Click(object sender, EventArgs e)
+        {
+            Masters.frmSystransactiion trac = new Masters.frmSystransactiion();
+            trac.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            trac.StartPosition = FormStartPosition.CenterParent;
+            trac.ShowDialog();
+            trac.Dispose();
+        }
     }
 }

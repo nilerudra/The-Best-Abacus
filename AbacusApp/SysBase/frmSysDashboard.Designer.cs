@@ -37,6 +37,7 @@
             this.pnl_menu = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_publicConnect = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_trans = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,6 +143,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btn_publicConnect);
             this.flowLayoutPanel1.Controls.Add(this.button7);
+            this.flowLayoutPanel1.Controls.Add(this.btn_trans);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -164,6 +166,23 @@
             this.btn_publicConnect.Text = "Public Connect";
             this.btn_publicConnect.UseVisualStyleBackColor = false;
             this.btn_publicConnect.Click += new System.EventHandler(this.btn_publicConnect_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Silver;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(120, 0);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 40);
+            this.button7.TabIndex = 1;
+            this.button7.TabStop = false;
+            this.button7.Text = "Branch";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -319,22 +338,22 @@
             this.button6.Text = "BRANCHES";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btn_trans
             // 
-            this.button7.BackColor = System.Drawing.Color.Silver;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(120, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 40);
-            this.button7.TabIndex = 1;
-            this.button7.TabStop = false;
-            this.button7.Text = "Branch";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_trans.BackColor = System.Drawing.Color.Silver;
+            this.btn_trans.FlatAppearance.BorderSize = 0;
+            this.btn_trans.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btn_trans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_trans.Location = new System.Drawing.Point(240, 0);
+            this.btn_trans.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_trans.Name = "btn_trans";
+            this.btn_trans.Size = new System.Drawing.Size(120, 40);
+            this.btn_trans.TabIndex = 2;
+            this.btn_trans.TabStop = false;
+            this.btn_trans.Text = "Transaction";
+            this.btn_trans.UseVisualStyleBackColor = false;
+            this.btn_trans.Click += new System.EventHandler(this.btn_trans_Click);
             // 
             // frmSysDashboard
             // 
@@ -390,5 +409,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btn_publicConnect;
         private Button button7;
+        private Button btn_trans;
     }
 }
