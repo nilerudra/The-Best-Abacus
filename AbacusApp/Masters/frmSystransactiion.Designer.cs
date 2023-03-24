@@ -34,35 +34,37 @@
             this.cmbo_studName = new System.Windows.Forms.ComboBox();
             this.lbl_selectStud = new System.Windows.Forms.Label();
             this.dgv_fees = new System.Windows.Forms.DataGridView();
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.txt_discount = new System.Windows.Forms.TextBox();
             this.txt_netBalence = new System.Windows.Forms.TextBox();
             this.lbl_total = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_discount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fees)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbo_studName
             // 
+            this.cmbo_studName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbo_studName.FormattingEnabled = true;
-            this.cmbo_studName.Location = new System.Drawing.Point(162, 24);
+            this.cmbo_studName.Location = new System.Drawing.Point(367, 44);
             this.cmbo_studName.Name = "cmbo_studName";
             this.cmbo_studName.Size = new System.Drawing.Size(232, 23);
             this.cmbo_studName.TabIndex = 0;
+            this.cmbo_studName.SelectedIndexChanged += new System.EventHandler(this.cmbo_studName_SelectedIndexChanged);
             this.cmbo_studName.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.cmbo_studName.Click += new System.EventHandler(this.cmbo_studName_Click);
+            this.cmbo_studName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbo_studName_KeyPress);
             // 
             // lbl_selectStud
             // 
+            this.lbl_selectStud.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_selectStud.AutoSize = true;
-            this.lbl_selectStud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_selectStud.Location = new System.Drawing.Point(30, 22);
+            this.lbl_selectStud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_selectStud.Location = new System.Drawing.Point(224, 44);
             this.lbl_selectStud.Name = "lbl_selectStud";
-            this.lbl_selectStud.Size = new System.Drawing.Size(115, 21);
+            this.lbl_selectStud.Size = new System.Drawing.Size(128, 21);
             this.lbl_selectStud.TabIndex = 1;
             this.lbl_selectStud.Text = "Select Student :";
             // 
@@ -79,8 +81,6 @@
             this.dgv_fees.BackgroundColor = System.Drawing.Color.White;
             this.dgv_fees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgv_fees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_fees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -100,98 +100,85 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_fees.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_fees.RowHeadersWidth = 62;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_fees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_fees.RowTemplate.Height = 25;
             this.dgv_fees.Size = new System.Drawing.Size(760, 147);
             this.dgv_fees.TabIndex = 2;
-            this.dgv_fees.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fees_CellEndEdit);
-            this.dgv_fees.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fees_CellLeave);
             this.dgv_fees.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fees_CellValueChanged);
-            this.dgv_fees.Leave += new System.EventHandler(this.dgv_fees_Leave);
-            // 
-            // Select
-            // 
-            this.Select.HeaderText = "Check";
-            this.Select.Name = "Select";
+            this.dgv_fees.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_fees_EditingControlShowing);
             // 
             // txt_total
             // 
-            this.txt_total.Location = new System.Drawing.Point(500, 306);
+            this.txt_total.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_total.Location = new System.Drawing.Point(398, 285);
+            this.txt_total.Margin = new System.Windows.Forms.Padding(0);
             this.txt_total.Name = "txt_total";
+            this.txt_total.ReadOnly = true;
             this.txt_total.Size = new System.Drawing.Size(155, 23);
             this.txt_total.TabIndex = 3;
             // 
             // txt_discount
             // 
-            this.txt_discount.Location = new System.Drawing.Point(500, 337);
+            this.txt_discount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_discount.Location = new System.Drawing.Point(398, 316);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(155, 23);
             this.txt_discount.TabIndex = 4;
+            this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
             // 
             // txt_netBalence
             // 
-            this.txt_netBalence.Location = new System.Drawing.Point(500, 368);
+            this.txt_netBalence.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_netBalence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_netBalence.Location = new System.Drawing.Point(398, 347);
+            this.txt_netBalence.Margin = new System.Windows.Forms.Padding(0);
             this.txt_netBalence.Name = "txt_netBalence";
+            this.txt_netBalence.ReadOnly = true;
             this.txt_netBalence.Size = new System.Drawing.Size(155, 23);
             this.txt_netBalence.TabIndex = 5;
             // 
             // lbl_total
             // 
+            this.lbl_total.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(427, 314);
+            this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_total.Location = new System.Drawing.Point(259, 286);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(38, 15);
+            this.lbl_total.Size = new System.Drawing.Size(47, 17);
             this.lbl_total.TabIndex = 6;
             this.lbl_total.Text = "Total :";
             // 
-            // label2
+            // lbl_discount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(427, 340);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.lbl_discount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbl_discount.AutoSize = true;
+            this.lbl_discount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_discount.Location = new System.Drawing.Point(259, 317);
+            this.lbl_discount.Name = "lbl_discount";
+            this.lbl_discount.Size = new System.Drawing.Size(71, 17);
+            this.lbl_discount.TabIndex = 7;
+            this.lbl_discount.Text = "Discount :";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(427, 371);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(259, 348);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(92, 17);
             this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(500, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 23);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(500, 37);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(202, 64);
-            this.listBox1.TabIndex = 10;
-            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.label3.Text = "Net Amount :";
             // 
             // btn_Save
             // 
+            this.btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Location = new System.Drawing.Point(169, 382);
+            this.btn_Save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Save.Location = new System.Drawing.Point(329, 398);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(105, 36);
@@ -206,10 +193,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_discount);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.txt_netBalence);
             this.Controls.Add(this.txt_discount);
@@ -236,15 +221,12 @@
         private ComboBox cmbo_studName;
         private Label lbl_selectStud;
         private DataGridView dgv_fees;
-        private DataGridViewCheckBoxColumn Select;
         private TextBox txt_total;
         private TextBox txt_discount;
         private TextBox txt_netBalence;
         private Label lbl_total;
-        private Label label2;
+        private Label lbl_discount;
         private Label label3;
-        private TextBox textBox1;
-        private ListBox listBox1;
         private Button btn_Save;
     }
 }

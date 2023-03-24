@@ -13,6 +13,11 @@ namespace AbacusApp.Masters
 {
     public partial class frmSystransactiion : Form
     {
+        int total = 0;
+        int dis = 0;
+        int net = 0;
+        int id;
+        DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
         String name;
         MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
@@ -63,17 +68,6 @@ namespace AbacusApp.Masters
 
         private void ifSelected()
         {
-            for (int i = 0; i < dgv_fees.Rows.Count; i++)
-            {
-                if (!Convert.ToBoolean(dgv_fees.Rows[i].Cells[0].Value))
-                {
-                    dgv_fees.Rows[i].Cells[3].ReadOnly = true;
-                }
-                else
-                {
-                    dgv_fees.Rows[i].Cells[3].ReadOnly = false;
-                }
-            }
         }
 
         public void Levels()
@@ -83,17 +77,28 @@ namespace AbacusApp.Masters
             ad.Fill(dt2);
         }
 
+        public void FillLevel()
+        {
+            cell.Items.Clear();
+            int j = 0;
+            while (j < dt2.Rows.Count)
+            {
+                cell.Items.Add(dt2.Rows[j].ItemArray[0].ToString());
+                cell.FlatStyle = FlatStyle.Flat;
+                j++;
+            }
+            
+            dgv_fees.Rows[0].Cells[2].Value = 0;
+            dgv_fees.Rows[1].Cells[2].Value = 0;
+        }
+
         private void frmSystransactiion_Load(object sender, EventArgs e)
         {
-            ad = new MySqlDataAdapter("Select id, concat(first_name,' ',middle_name,' ',last_name) as name from stud_profile where branch_id = " + SysBase.frmSysDashboard.profile_id + " and status = '1'", conn);
+            ad = new MySqlDataAdapter("Select id, concat(first_name,' ',middle_name,' ',last_name) as name, current_subscrp_id from stud_profile where branch_id = " + SysBase.frmSysDashboard.profile_id + " and status = '1'", conn);
             ad.Fill(dt);
-
-            int i = 0;
-            while (i < dt.Rows.Count)
+            for(int i = 0; i < dt.Rows.Count; i++)
             {
                 cmbo_studName.Items.Add(dt.Rows[i].ItemArray[1].ToString());
-                listBox1.Items.Add(dt.Rows[i].ItemArray[1].ToString());
-                i++;
             }
 
             DataTable dataTable = new DataTable();
@@ -102,209 +107,161 @@ namespace AbacusApp.Masters
             dgv_fees.DataSource = dataTable;
 
             Levels();
-
             DataGridViewColumn newColumn = new DataGridViewTextBoxColumn();
             newColumn.HeaderText = "Fees";
             newColumn.Name = "fees";
-
             dgv_fees.Columns.Add(newColumn);
-
-            DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
-            int j = 0;
-            while (j < dt2.Rows.Count)
-            {
-                cell.Items.Add(dt2.Rows[j].ItemArray[0].ToString());
-                cell.FlatStyle = FlatStyle.Flat;
-                j++;
-            }
+            FillLevel();
             dgv_fees.Rows[2].Cells[newColumn.Name] = cell;
-            dgv_fees.Rows[0].Cells[3].Value = 0;
-            dgv_fees.Rows[1].Cells[3].Value = 0;
-            
+
+            dgv_fees.Rows[0].Cells[2].Value = 0;
+            dgv_fees.Rows[1].Cells[2].Value = 0;
+            for(int i = 0; i < dgv_fees.Rows.Count; i++)
+            {
+                dgv_fees.Rows[i].Cells[0].ReadOnly  = true;
+                dgv_fees.Rows[i].Cells[1].ReadOnly = true;
+            }
+            txt_discount.Text = 0 + "";
         }
 
         private void dgv_fees_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            ifSelected();
-            /*if (dgv_fees.Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell) && e.RowIndex >= 0)
-            {
-                DataGridViewCheckBoxCell checkBoxCell = dgv_fees.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                bool isChecked = Convert.ToBoolean(checkBoxCell.Value);
-
-                if (isChecked)
-                {
-                    dgv_fees.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-                }
-                else
-                {
-                    dgv_fees.Rows[e.RowIndex].Cells[3].ReadOnly = true;
-                }
-            }*/
-        }
-
-        private void dgv_fees_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //int fees_amt = 0;
-            //int regv = 0;
-            //int levelKit = 0;
-
-            //if (e.RowIndex >= 0 && e.ColumnIndex == 3)
-            //{
-            //    for(int i = 0; i < dt2.Rows.Count; i++)
-            //    {
-            //        if (dt2.Rows[i].ItemArray[0].ToString().Equals(dgv_fees.Rows[2].Cells[3].Value))
-            //        {
-            //            fees_amt = int.Parse(dt2.Rows[i].ItemArray[1].ToString());
-            //        }
-            //    }
-
-            //    regv = int.Parse(dgv_fees.Rows[0].Cells[3].Value.ToString());
-            //    levelKit = int.Parse(dgv_fees.Rows[1].Cells[3].Value.ToString());
-
-            //    txt_total.Text = "" + (fees_amt + levelKit + regv);
-            //}
-        }
-
-        private void dgv_fees_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_fees_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            /*int fees_amt = 0;
-            int regv = 0;
-            int levelKit = 0;
-
-            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
-            {
-                for (int i = 0; i < dt2.Rows.Count; i++)
-                {
-                    if (dt2.Rows[i].ItemArray[0].ToString().Equals(dgv_fees.Rows[2].Cells[3].Value))
-                    {
-                        fees_amt = int.Parse(dt2.Rows[i].ItemArray[1].ToString());
-                    }
-                }
-
-                regv = int.Parse(dgv_fees.Rows[0].Cells[3].Value.ToString());
-                levelKit = int.Parse(dgv_fees.Rows[1].Cells[3].Value.ToString());
-
-                txt_total.Text = "" + (fees_amt + levelKit + regv);
-            }*/
-        }
-
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-           /* // Filter the items in the ListBox based on the current text in the TextBox.
-            string filter = textBox1.Text.ToLower();
-            List<string> visibleItems = listBox1.Items.Cast<string>()
-                .Where(item => item.ToLower().Contains(filter))
-                .ToList();
-            listBox1.DataSource = visibleItems;
-
-            // Show the ListBox if there are any matching items, otherwise hide it.
-            if (visibleItems.Any())
-            {
-                listBox1.Visible = true;
-            }
-            else
-            {
-                listBox1.Visible = false;
-            }*/
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_Click(object sender, EventArgs e)
-        {
-            // Copy the selected item from the ListBox to the TextBox and disable the TextBox.
-            /*if (listBox1.SelectedIndex != -1)
-            {
-                textBox1.Text = listBox1.SelectedItem.ToString();
-                //textBox1.Enabled = false;
-                listBox1.Visible = false;
-            }*/
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            // Enable the TextBox when it is clicked.
-            //textBox1.Enabled = true;
-            /*listBox1.Visible = true;*/
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            /*
-            string filter = textBox1.Text.ToLower();
-            List<string> visibleItems = listBox1.Items.Cast<string>()
-                .Where(item => item.ToLower().Contains(filter))
-                .ToList();
-            listBox1.DataSource = visibleItems;
-
-            // Show the ListBox if there are any matching items, otherwise hide it.
-            if (visibleItems.Any())
-            {
-                listBox1.Visible = true;
-            }
-            else
-            {
-                listBox1.Visible = false;
-            }*/
-        }
-
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
             int first = 0;
             int second = 0;
             int third = 0;
-
-            if (dgv_fees.Rows[0].Cells[3].Value != null)
+            if (dgv_fees.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue.ToString() == "")
             {
-                first = int.Parse(dgv_fees.Rows[0].Cells[3].Value.ToString());
+                dgv_fees.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
             }
 
-            if (dgv_fees.Rows[1].Cells[3].Value != null)
-            {
-                second = int.Parse(dgv_fees.Rows[0].Cells[3].Value.ToString());
-            }
+            int.TryParse(dgv_fees.Rows[0].Cells[2].EditedFormattedValue.ToString(), out first);
+            int.TryParse(dgv_fees.Rows[1].Cells[2].EditedFormattedValue.ToString(), out second);
 
-            DataGridViewComboBoxCell cell = dgv_fees.Rows[2].Cells[3] as DataGridViewComboBoxCell;
+            DataGridViewComboBoxCell boxCell = dgv_fees.Rows[2].Cells[2] as DataGridViewComboBoxCell;
             if (cell.Value != null)
             {
                 for (int i = 0; i < dt2.Rows.Count; i++)
                 {
-                    if (dt2.Rows[i].ItemArray[0].ToString().Equals(dgv_fees.Rows[2].Cells[3].Value))
+                    if (dt2.Rows[i].ItemArray[0].ToString().Equals(dgv_fees.Rows[2].Cells[2].Value))
                     {
                         third = int.Parse(dt2.Rows[i].ItemArray[1].ToString());
                     }
                 }
             }
+            int s = Convert.ToInt32(first);
+            int t = Convert.ToInt32(second);
+            int r = Convert.ToInt32(third);
+            txt_total.Text = (s + t + r).ToString();
 
-            
-            //MessageBox.Show(first + "," + second + "," + third);
-            StringBuilder stringBuilder = new StringBuilder();
+            total = (int)float.Parse(txt_total.Text);
+        }
 
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            StringBuilder head_str = new StringBuilder("");
             for(int i = 0; i < dgv_fees.Rows.Count; i++)
             {
-                //MessageBox.Show(stringBuilder.Length + "");
-                if (Convert.ToBoolean(dgv_fees.Rows[i].Cells[0].Value))
+                if (!(dgv_fees.Rows[i].Cells[2].Value.ToString().Equals("0")) || !(dgv_fees.Rows[i].Cells[2].Value.ToString().Equals("")))
                 {
-                    
-                    if (stringBuilder.Length > 0)
+                    if(head_str.Length > 0)
                     {
-                        stringBuilder.Append("," + i);
+                        head_str.Append("," + (i+1));
                     }
                     else
                     {
-                        stringBuilder.Append("" + i);
+                        head_str.Append("" + (i + 1));
                     }
                 }
             }
-            MessageBox.Show(stringBuilder.ToString());
+            MessageBox.Show(head_str + "");
+            /*String q = "insert into trans_master (cand_id, cand_name, cand_role, total_fees, discount, net_fees, status, ref_code, head_str, amt_str) values" +
+                " " +id+ ",'" +name+ "','" +0+ "'," +total+ "," +txt_discount.Text+ "," +net+",'0','0','" +head_str+ "', ";*/
+        }
+
+
+        private void cmbo_studName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // set Handled property to true by default
+
+            if (Char.IsControl(e.KeyChar)) // allow control keys (e.g. backspace, delete)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                // Check if the key pressed exists in the ComboBox Items collection
+                foreach (string item in cmbo_studName.Items)
+                {
+                    if (item.Contains(e.KeyChar.ToString(), StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        e.Handled = false;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void cmbo_studName_Click(object sender, EventArgs e)
+        {
+            cmbo_studName.DroppedDown = true;
+        }
+
+        private void dgv_fees_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgv_fees.CurrentCell.ColumnIndex == 2 && e.Control is TextBox)
+            {
+                TextBox textBox = e.Control as TextBox;
+                textBox.KeyPress -= textBox_KeyPress;
+                textBox.KeyPress += textBox_KeyPress;
+            }
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbo_studName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_discount.Text = 0 + "";
+            dgv_fees.Rows[0].Cells[2].Value = 0;
+            dgv_fees.Rows[1].Cells[2].Value = 0;
+
+            id = int.Parse(dt.Rows[cmbo_studName.SelectedIndex].ItemArray[0].ToString());
+            int lvl = 0;
+
+            ad = new MySqlDataAdapter("select stud_profile_id from subscrp_log where stud_profile_id =" + id + "", conn);
+            DataTable table = new DataTable();
+            ad.Fill(table);
+
+            if(table.Rows.Count > 0) 
+            {
+                lvl = int.Parse(dt.Rows[cmbo_studName.SelectedIndex].ItemArray[2].ToString());
+                cell.Items.Clear();
+                cell.Items.Add("Level-" + lvl);
+            }
+            else
+            {
+                FillLevel();
+            }
+        }
+
+        private void txt_discount_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_discount.Text.Length > 0)
+            {
+                txt_netBalence.Text = (Convert.ToInt32(txt_total.Text) - Convert.ToInt32(txt_discount.Text)).ToString();
+                net = (int)float.Parse(txt_netBalence.Text);
+            }
+            else
+            {
+                txt_netBalence.Text = txt_total.Text;
+                net = (int)float.Parse(txt_netBalence.Text);
+            }
         }
     }
 }
