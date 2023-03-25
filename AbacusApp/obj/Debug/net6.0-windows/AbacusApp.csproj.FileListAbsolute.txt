@@ -236,3 +236,7 @@ C:\Users\ADITYA RAMESH NIKAM\Desktop\learnGit\demoabacus\The-Best-Abacus\AbacusA
 C:\Users\ADITYA RAMESH NIKAM\Desktop\learnGit\demoabacus\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\ref\AbacusApp.dll
 D:\OneDrive\Documents\GitHub\PRJ-130\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSystransactiion.resources
 C:\Users\ADITYA RAMESH NIKAM\Desktop\learnGit\demoabacus\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSystransactiion.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysAdmittedStudLs.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysStudInfo.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSystransactiion.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.menuDashboards.frmPublicConnectDash.resources

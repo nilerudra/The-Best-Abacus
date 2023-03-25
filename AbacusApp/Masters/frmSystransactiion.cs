@@ -17,7 +17,6 @@ namespace AbacusApp.Masters
         int dis = 0;
         int net = 0;
         int id;
-        //DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
         String name;
         MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
@@ -79,8 +78,6 @@ namespace AbacusApp.Masters
             int j = level;
             while (j < dt2.Rows.Count)
             {
-                /*cell.Items.Add(dt2.Rows[j].ItemArray[0].ToString());
-                cell.FlatStyle = FlatStyle.Flat;*/
                 cmb_lvl.Items.Add(dt2.Rows[j].ItemArray[0].ToString());
                 j++;
             }
@@ -99,7 +96,7 @@ namespace AbacusApp.Masters
             }
 
             DataTable dataTable = new DataTable();
-            ad = new MySqlDataAdapter("select id, name from fees_heads where fees_head_role = '0' and status = '1'", conn);
+            ad = new MySqlDataAdapter("select id, name from fees_heads where find_in_set('0', fees_head_role) and status = '1'", conn);
             ad.Fill(dataTable);
             dgv_fees.DataSource = dataTable;
 
@@ -108,14 +105,14 @@ namespace AbacusApp.Masters
             newColumn.HeaderText = "Fees";
             newColumn.Name = "fees";
             dgv_fees.Columns.Add(newColumn);
-            //FillLevel();
-            //dgv_fees.Rows[2].Cells[newColumn.Name] = cell;
-
+            
             dgv_fees.Rows[2].Cells[2].Value = 0;
+            dgv_fees.Rows[3].Cells[2].Value = 0;
             dgv_fees.Rows[0].Cells[2].Value = 0;
             dgv_fees.Rows[1].Cells[2].Value = 0;
             dgv_fees.Rows[2].Cells[2].ReadOnly= true;
-            for(int i = 0; i < dgv_fees.Rows.Count; i++)
+            dgv_fees.Rows[3].Cells[2].ReadOnly = true;
+            for (int i = 0; i < dgv_fees.Rows.Count; i++)
             {
                 dgv_fees.Rows[i].Cells[0].ReadOnly  = true;
                 dgv_fees.Rows[i].Cells[1].ReadOnly = true;
@@ -125,36 +122,18 @@ namespace AbacusApp.Masters
 
         private void dgv_fees_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int first = 0;
-            int second = 0;
             int third = 0;
             if (dgv_fees.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue.ToString() == "")
             {
                 dgv_fees.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
             }
 
-
-            String a = dgv_fees.Rows[2].Cells[2].Value.ToString();
-
-            if (a.Length > 1)
+            for(int i = 0; i < dgv_fees.Rows.Count; i++)
             {
-                for(int i = 0; i < dt2.Rows.Count; i++)
-                {
-                    if (dt2.Rows[i].ItemArray[0].ToString().Equals(a))
-                    {
-                        third = Convert.ToInt32(dt2.Rows[i].ItemArray[1].ToString());
-                    }
-                }
+                third += Convert.ToInt32(dgv_fees.Rows[i].Cells[2].Value);
             }
-
-            int.TryParse(dgv_fees.Rows[0].Cells[2].EditedFormattedValue.ToString(), out first);
-            int.TryParse(dgv_fees.Rows[1].Cells[2].EditedFormattedValue.ToString(), out second);
-
-            int s = Convert.ToInt32(first);
-            int t = Convert.ToInt32(second);
-            int r = Convert.ToInt32(third);
-            txt_total.Text = (s + t + r).ToString();
-
+           
+            txt_total.Text = third.ToString();
             total = (int)float.Parse(txt_total.Text);
         }
 
@@ -281,7 +260,15 @@ namespace AbacusApp.Masters
 
         private void cmb_lvl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgv_fees.Rows[2].Cells[2].Value = cmb_lvl.Text;
+            dgv_fees.Rows[0].Cells[2].Value = 0;
+            dgv_fees.Rows[1].Cells[2].Value = 0;
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                if (dt2.Rows[i].ItemArray[0].ToString().Equals(cmb_lvl.Text))
+                {
+                    dgv_fees.Rows[2].Cells[2].Value = dt2.Rows[i].ItemArray[1].ToString();
+                }
+            }
         }
 
         private void cb_changeLvl_CheckedChanged(object sender, EventArgs e)
@@ -293,11 +280,12 @@ namespace AbacusApp.Masters
                 int lvl = Convert.ToInt32(a[1]);
 
                 FillLevel(lvl);
+                cmb_lvl.SelectedIndex = 0;
             }
             else
             {
-                cmb_lvl.Text = "";
                 changeLevel();
+                cmb_lvl.SelectedIndex = 0;
             }
         }
     }
