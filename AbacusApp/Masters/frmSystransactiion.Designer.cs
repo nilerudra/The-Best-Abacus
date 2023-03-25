@@ -41,6 +41,9 @@
             this.lbl_discount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.lbl_lvl = new System.Windows.Forms.Label();
+            this.cmb_lvl = new System.Windows.Forms.ComboBox();
+            this.cb_changeLvl = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +51,7 @@
             // 
             this.cmbo_studName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbo_studName.FormattingEnabled = true;
-            this.cmbo_studName.Location = new System.Drawing.Point(367, 44);
+            this.cmbo_studName.Location = new System.Drawing.Point(321, 12);
             this.cmbo_studName.Name = "cmbo_studName";
             this.cmbo_studName.Size = new System.Drawing.Size(232, 23);
             this.cmbo_studName.TabIndex = 0;
@@ -62,7 +65,7 @@
             this.lbl_selectStud.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_selectStud.AutoSize = true;
             this.lbl_selectStud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_selectStud.Location = new System.Drawing.Point(224, 44);
+            this.lbl_selectStud.Location = new System.Drawing.Point(178, 12);
             this.lbl_selectStud.Name = "lbl_selectStud";
             this.lbl_selectStud.Size = new System.Drawing.Size(128, 21);
             this.lbl_selectStud.TabIndex = 1;
@@ -90,7 +93,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_fees.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_fees.GridColor = System.Drawing.Color.White;
-            this.dgv_fees.Location = new System.Drawing.Point(12, 106);
+            this.dgv_fees.Location = new System.Drawing.Point(12, 158);
             this.dgv_fees.Name = "dgv_fees";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -113,7 +116,7 @@
             // 
             this.txt_total.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txt_total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_total.Location = new System.Drawing.Point(398, 285);
+            this.txt_total.Location = new System.Drawing.Point(398, 310);
             this.txt_total.Margin = new System.Windows.Forms.Padding(0);
             this.txt_total.Name = "txt_total";
             this.txt_total.ReadOnly = true;
@@ -123,7 +126,7 @@
             // txt_discount
             // 
             this.txt_discount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txt_discount.Location = new System.Drawing.Point(398, 316);
+            this.txt_discount.Location = new System.Drawing.Point(398, 341);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(155, 23);
             this.txt_discount.TabIndex = 4;
@@ -133,7 +136,7 @@
             // 
             this.txt_netBalence.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txt_netBalence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_netBalence.Location = new System.Drawing.Point(398, 347);
+            this.txt_netBalence.Location = new System.Drawing.Point(398, 372);
             this.txt_netBalence.Margin = new System.Windows.Forms.Padding(0);
             this.txt_netBalence.Name = "txt_netBalence";
             this.txt_netBalence.ReadOnly = true;
@@ -145,7 +148,7 @@
             this.lbl_total.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_total.Location = new System.Drawing.Point(259, 286);
+            this.lbl_total.Location = new System.Drawing.Point(259, 311);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(47, 17);
             this.lbl_total.TabIndex = 6;
@@ -156,7 +159,7 @@
             this.lbl_discount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_discount.AutoSize = true;
             this.lbl_discount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_discount.Location = new System.Drawing.Point(259, 317);
+            this.lbl_discount.Location = new System.Drawing.Point(259, 342);
             this.lbl_discount.Name = "lbl_discount";
             this.lbl_discount.Size = new System.Drawing.Size(71, 17);
             this.lbl_discount.TabIndex = 7;
@@ -167,7 +170,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(259, 348);
+            this.label3.Location = new System.Drawing.Point(259, 373);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 17);
             this.label3.TabIndex = 8;
@@ -178,7 +181,7 @@
             this.btn_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Save.Location = new System.Drawing.Point(329, 398);
+            this.btn_Save.Location = new System.Drawing.Point(329, 423);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(105, 36);
@@ -187,11 +190,49 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // lbl_lvl
+            // 
+            this.lbl_lvl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_lvl.AutoSize = true;
+            this.lbl_lvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lvl.Location = new System.Drawing.Point(196, 41);
+            this.lbl_lvl.Name = "lbl_lvl";
+            this.lbl_lvl.Size = new System.Drawing.Size(108, 21);
+            this.lbl_lvl.TabIndex = 13;
+            this.lbl_lvl.Text = "Select Level :";
+            // 
+            // cmb_lvl
+            // 
+            this.cmb_lvl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmb_lvl.FormattingEnabled = true;
+            this.cmb_lvl.Location = new System.Drawing.Point(321, 41);
+            this.cmb_lvl.Name = "cmb_lvl";
+            this.cmb_lvl.Size = new System.Drawing.Size(232, 23);
+            this.cmb_lvl.TabIndex = 12;
+            this.cmb_lvl.SelectedIndexChanged += new System.EventHandler(this.cmb_lvl_SelectedIndexChanged);
+            // 
+            // cb_changeLvl
+            // 
+            this.cb_changeLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_changeLvl.AutoSize = true;
+            this.cb_changeLvl.Enabled = false;
+            this.cb_changeLvl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cb_changeLvl.Location = new System.Drawing.Point(573, 43);
+            this.cb_changeLvl.Name = "cb_changeLvl";
+            this.cb_changeLvl.Size = new System.Drawing.Size(104, 21);
+            this.cb_changeLvl.TabIndex = 14;
+            this.cb_changeLvl.Text = "Change Level";
+            this.cb_changeLvl.UseVisualStyleBackColor = true;
+            this.cb_changeLvl.CheckedChanged += new System.EventHandler(this.cb_changeLvl_CheckedChanged);
+            // 
             // frmSystransactiion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.cb_changeLvl);
+            this.Controls.Add(this.lbl_lvl);
+            this.Controls.Add(this.cmb_lvl);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_discount);
@@ -228,5 +269,8 @@
         private Label lbl_discount;
         private Label label3;
         private Button btn_Save;
+        private Label lbl_lvl;
+        private ComboBox cmb_lvl;
+        private CheckBox cb_changeLvl;
     }
 }
