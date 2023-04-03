@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\gadget guru\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\gadget guru\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\ADITYA RAMESH NIKAM\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ADITYA RAMESH NIKAM\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

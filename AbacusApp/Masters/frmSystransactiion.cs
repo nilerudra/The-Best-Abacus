@@ -288,5 +288,10 @@ namespace AbacusApp.Masters
                 cmb_lvl.SelectedIndex = 0;
             }
         }
+
+        private void dgv_fees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

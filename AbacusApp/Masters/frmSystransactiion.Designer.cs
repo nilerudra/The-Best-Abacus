@@ -111,6 +111,7 @@
             this.dgv_fees.RowTemplate.Height = 25;
             this.dgv_fees.Size = new System.Drawing.Size(760, 120);
             this.dgv_fees.TabIndex = 2;
+            this.dgv_fees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fees_CellContentClick);
             this.dgv_fees.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_fees_CellValueChanged);
             this.dgv_fees.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_fees_EditingControlShowing);
             // 

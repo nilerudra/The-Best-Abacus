@@ -73,7 +73,6 @@
             // 
             this.pnl_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_update.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_update.Controls.Add(this.btn_enquiry);
             this.pnl_update.Controls.Add(this.txt_rmk);
             this.pnl_update.Controls.Add(this.lbn_rmk);
             this.pnl_update.Controls.Add(this.btn_procced);
@@ -91,16 +90,17 @@
             this.pnl_update.Location = new System.Drawing.Point(10, 216);
             this.pnl_update.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_update.Name = "pnl_update";
-            this.pnl_update.Size = new System.Drawing.Size(852, 234);
+            this.pnl_update.Size = new System.Drawing.Size(852, 203);
             this.pnl_update.TabIndex = 1;
             // 
             // btn_enquiry
             // 
-            this.btn_enquiry.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_enquiry.Location = new System.Drawing.Point(719, 176);
+            this.btn_enquiry.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_enquiry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_enquiry.Location = new System.Drawing.Point(410, 434);
             this.btn_enquiry.Margin = new System.Windows.Forms.Padding(1);
             this.btn_enquiry.Name = "btn_enquiry";
-            this.btn_enquiry.Size = new System.Drawing.Size(111, 29);
+            this.btn_enquiry.Size = new System.Drawing.Size(133, 29);
             this.btn_enquiry.TabIndex = 14;
             this.btn_enquiry.Text = "Enquiry";
             this.btn_enquiry.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             // txt_rmk
             // 
             this.txt_rmk.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_rmk.Location = new System.Drawing.Point(205, 167);
+            this.txt_rmk.Location = new System.Drawing.Point(207, 140);
             this.txt_rmk.Margin = new System.Windows.Forms.Padding(1);
             this.txt_rmk.Multiline = true;
             this.txt_rmk.Name = "txt_rmk";
@@ -120,7 +120,7 @@
             // 
             this.lbn_rmk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbn_rmk.AutoSize = true;
-            this.lbn_rmk.Location = new System.Drawing.Point(140, 170);
+            this.lbn_rmk.Location = new System.Drawing.Point(142, 143);
             this.lbn_rmk.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbn_rmk.Name = "lbn_rmk";
             this.lbn_rmk.Size = new System.Drawing.Size(53, 15);
@@ -130,7 +130,7 @@
             // btn_procced
             // 
             this.btn_procced.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_procced.Location = new System.Drawing.Point(563, 176);
+            this.btn_procced.Location = new System.Drawing.Point(565, 149);
             this.btn_procced.Margin = new System.Windows.Forms.Padding(1);
             this.btn_procced.Name = "btn_procced";
             this.btn_procced.Size = new System.Drawing.Size(139, 29);
@@ -142,7 +142,7 @@
             // btn_update
             // 
             this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_update.Location = new System.Drawing.Point(429, 176);
+            this.btn_update.Location = new System.Drawing.Point(431, 149);
             this.btn_update.Margin = new System.Windows.Forms.Padding(1);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 29);
@@ -157,7 +157,7 @@
             this.dtp_nextFollowupDate.Checked = false;
             this.dtp_nextFollowupDate.CustomFormat = "yyyy-MM-dd";
             this.dtp_nextFollowupDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_nextFollowupDate.Location = new System.Drawing.Point(548, 100);
+            this.dtp_nextFollowupDate.Location = new System.Drawing.Point(550, 73);
             this.dtp_nextFollowupDate.Margin = new System.Windows.Forms.Padding(1);
             this.dtp_nextFollowupDate.Name = "dtp_nextFollowupDate";
             this.dtp_nextFollowupDate.Size = new System.Drawing.Size(176, 23);
@@ -167,7 +167,7 @@
             // 
             this.lbl_nextFollowup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_nextFollowup.AutoSize = true;
-            this.lbl_nextFollowup.Location = new System.Drawing.Point(429, 103);
+            this.lbl_nextFollowup.Location = new System.Drawing.Point(431, 76);
             this.lbl_nextFollowup.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_nextFollowup.Name = "lbl_nextFollowup";
             this.lbl_nextFollowup.Size = new System.Drawing.Size(117, 15);
@@ -178,7 +178,7 @@
             // 
             this.chbox_notIntretsed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chbox_notIntretsed.AutoSize = true;
-            this.chbox_notIntretsed.Location = new System.Drawing.Point(429, 69);
+            this.chbox_notIntretsed.Location = new System.Drawing.Point(431, 42);
             this.chbox_notIntretsed.Margin = new System.Windows.Forms.Padding(1);
             this.chbox_notIntretsed.Name = "chbox_notIntretsed";
             this.chbox_notIntretsed.Size = new System.Drawing.Size(101, 19);
@@ -190,7 +190,7 @@
             // txt_contactNo
             // 
             this.txt_contactNo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_contactNo.Location = new System.Drawing.Point(205, 133);
+            this.txt_contactNo.Location = new System.Drawing.Point(207, 106);
             this.txt_contactNo.Margin = new System.Windows.Forms.Padding(1);
             this.txt_contactNo.Name = "txt_contactNo";
             this.txt_contactNo.Size = new System.Drawing.Size(176, 23);
@@ -199,7 +199,7 @@
             // txt_lastName
             // 
             this.txt_lastName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_lastName.Location = new System.Drawing.Point(205, 100);
+            this.txt_lastName.Location = new System.Drawing.Point(207, 73);
             this.txt_lastName.Margin = new System.Windows.Forms.Padding(1);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(176, 23);
@@ -208,7 +208,7 @@
             // txt_firstName
             // 
             this.txt_firstName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_firstName.Location = new System.Drawing.Point(205, 65);
+            this.txt_firstName.Location = new System.Drawing.Point(207, 38);
             this.txt_firstName.Margin = new System.Windows.Forms.Padding(1);
             this.txt_firstName.Name = "txt_firstName";
             this.txt_firstName.Size = new System.Drawing.Size(176, 23);
@@ -218,7 +218,7 @@
             // 
             this.lbl_contactNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_contactNo.AutoSize = true;
-            this.lbl_contactNo.Location = new System.Drawing.Point(119, 136);
+            this.lbl_contactNo.Location = new System.Drawing.Point(121, 109);
             this.lbl_contactNo.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_contactNo.Name = "lbl_contactNo";
             this.lbl_contactNo.Size = new System.Drawing.Size(74, 15);
@@ -244,7 +244,7 @@
             // 
             this.lbl_lastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_lastName.AutoSize = true;
-            this.lbl_lastName.Location = new System.Drawing.Point(124, 101);
+            this.lbl_lastName.Location = new System.Drawing.Point(126, 74);
             this.lbl_lastName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_lastName.Name = "lbl_lastName";
             this.lbl_lastName.Size = new System.Drawing.Size(69, 15);
@@ -255,7 +255,7 @@
             // 
             this.lbl_firstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_firstName.AutoSize = true;
-            this.lbl_firstName.Location = new System.Drawing.Point(123, 68);
+            this.lbl_firstName.Location = new System.Drawing.Point(125, 41);
             this.lbl_firstName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_firstName.Name = "lbl_firstName";
             this.lbl_firstName.Size = new System.Drawing.Size(70, 15);
@@ -267,6 +267,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 473);
+            this.Controls.Add(this.btn_enquiry);
             this.Controls.Add(this.pnl_update);
             this.Controls.Add(this.dgv_enqList);
             this.DoubleBuffered = true;
