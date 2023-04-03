@@ -25,6 +25,7 @@ namespace AbacusApp.RegMasters
         MySqlCommand cmd;
         MySqlDataAdapter ad;
         DataTable dt2 = new DataTable();
+        DataTable dt3 = new DataTable();
         public frmRegStud()
         {
             InitializeComponent();
@@ -71,6 +72,51 @@ namespace AbacusApp.RegMasters
             txt_discount.Text = 0 + "";
         }
 
+        public void Get_ID()
+        {
+            String que = "Select id from stud_profile where contact_no = '" + txt_contactNo.Text + "' and branch_id = " + SysBase.frmSysDashboard.profile_id + "";
+            ad = new MySqlDataAdapter(que, conn);
+            ad.Fill(dt3);
+        }
+
+        public void Trans_Entey()
+        {
+            StringBuilder head_str = new StringBuilder("");
+            StringBuilder amt_str = new StringBuilder("");
+
+            for (int i = 0; i < dgv_fees.Rows.Count; i++)
+            {
+                if (!(dgv_fees.Rows[i].Cells[2].Value.ToString().Equals("0")))
+                {
+                    if (head_str.Length > 0)
+                    {
+                        head_str.Append("," + (i + 1));
+
+                    }
+                    else
+                    {
+                        head_str.Append("" + (i + 1));
+                    }
+
+                    if(amt_str.Length > 0)
+                    {
+                        amt_str.Append("," + dgv_fees.Rows[i].Cells[2].Value.ToString());
+                    }
+                    else
+                    {
+                        amt_str.Append(dgv_fees.Rows[i].Cells[2].Value.ToString());
+                    }
+                }
+            }
+            MessageBox.Show(head_str + "  " + amt_str);
+            conn.Open();
+            cmd = new MySqlCommand("Insert into trans_master (cand_id, cand_name, cand_role, total_fees, discount, net_fees, rmk, head_str, amt_str) values(" + int.Parse(dt3.Rows[0].ItemArray[0].ToString()) + ",'" + txt_firstName.Text + " " + txt_middleName.Text + " " + txt_lastName.Text + "', '0', " + float.Parse(txt_total.Text) + "," + float.Parse(txt_discount.Text) + ","+ float.Parse(txt_netBalence.Text) +",'"+ txt_rmk.Text + "','" + head_str + "','" + amt_str + "'", conn);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+
+            //cmd = new MySqlCommand("Insert into subscrp_log (subscrp_id, stud_profile_id, trans_id, subscrp_mode, status, )");
+        }
+
         private void btn_register_Click(object sender, EventArgs e)
         {
             String s = "";
@@ -88,15 +134,20 @@ namespace AbacusApp.RegMasters
             }
             
             String que = "INSERT INTO stud_profile (first_name, middle_name, last_name, contact_no, email_id, addr, gender, pwd, branch_id, city_name, current_subscrp_id, status) " +
-            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.id + ",'" + txt_city.Text + "'," + 1 + ",'" + 1 + "')";
+            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.profile_id + ",'" + txt_city.Text + "'," + 1 + ",'" + 1 + "')";
             conn.Open();
             cmd = new MySqlCommand(que, conn);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
+            conn.Close();
+
+            Get_ID();
+            Trans_Entey();
+
 
             String que1 = "Insert into enq_master (name, contact, email, address, status, enq_type, rmk , branch_id) " +
                 "values('" + txt_firstName.Text + " " + txt_lastName.Text+"','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + 1 + "','Offline Enquiry','Admitted by " + frmSysDashboard.name + "'," + frmSysDashboard.id +")";
-
+            conn.Open();
             cmd = new MySqlCommand(que1, conn);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
@@ -165,6 +216,11 @@ namespace AbacusApp.RegMasters
                     dgv_fees.Rows[2].Cells[2].Value = dt2.Rows[i].ItemArray[1].ToString();
                 }
             }
+        }
+
+        private void txt_netBalence_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
