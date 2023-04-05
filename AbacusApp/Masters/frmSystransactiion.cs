@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace AbacusApp.Masters
 {
@@ -24,10 +26,83 @@ namespace AbacusApp.Masters
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
         DataTable dt2 = new DataTable();
+        DataTable dt3 = new DataTable();
 
         public frmSystransactiion()
         {
             InitializeComponent();
+        }
+
+        public void Get_ID()
+        {
+            String que = "Select MAX(id) from stud_profile where branch_id = " + SysBase.frmSysDashboard.profile_id + "";
+            ad = new MySqlDataAdapter(que, conn);
+            ad.Fill(dt3);
+        }
+
+        /*public void Cal_Date()
+        {
+            String s = "SELECT DATE(start_date) AS start_date FROM subscrp_log WHERE stud_profile_id = 15 LIMIT 1";
+
+            DataTable d = new DataTable();
+            ad = new MySqlDataAdapter(s, conn);
+            ad.Fill(d);
+            MessageBox.Show(d.Rows[0].ItemArray[0].ToString() + "");
+            ad.Dispose();
+
+            String s2 = "SELECT DATE_ADD(STR_TO_DATE('" + d.Rows[0].ItemArray[0] + "', '%Y-%m-%d'), INTERVAL 30 DAY) AS '30 Days After'";
+            DataTable d2 = new DataTable();
+            ad = new MySqlDataAdapter(s2, conn);
+            ad.Fill(d2);
+            MessageBox.Show(d2.Rows[0].ItemArray[0].ToString());
+        }*/
+
+        public void Cal_Date()
+        {
+            String s = "SELECT DATE_FORMAT(start_date, '%Y-%m-%d') AS start_date FROM subscrp_log WHERE stud_profile_id = 15 ORDER BY start_date DESC LIMIT 1";
+            DataTable d = new DataTable();
+            ad = new MySqlDataAdapter(s, conn);
+            ad.Fill(d);
+            ad.Dispose();
+
+            if (d.Rows.Count > 0)
+            {
+                String dateStr = d.Rows[0].ItemArray[0].ToString();
+                String s2 = "SELECT DATE_ADD('" + dateStr + "', INTERVAL 30 DAY) AS '30 Days After'";
+                DataTable d2 = new DataTable();
+                ad = new MySqlDataAdapter(s2, conn);
+                ad.Fill(d2);
+                ad.Dispose();
+
+
+                DataTable d3 = new DataTable();
+                String s3 = "SELECT DATEDIFF('" + d2.Rows[0].ItemArray[0].ToString() + "', NOW()) AS diff";
+                ad = new MySqlDataAdapter(s3, conn);
+                ad.Fill(d3);
+                ad.Dispose();
+
+                if (int.Parse(d3.Rows[0].ItemArray[0].ToString()) < 0)
+                {
+                    lbl_days.Text = "0";
+                }
+                else
+                {
+                    if (d2.Rows.Count > 0)
+                    {
+                        String result = d2.Rows[0].ItemArray[0].ToString();
+                        expire_date.Text = result;
+                        lbl_days.Text = d3.Rows[0].ItemArray[0].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No result found for DATE_ADD query.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No result found for SELECT query.");
+            }
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -88,6 +163,7 @@ namespace AbacusApp.Masters
 
         private void frmSystransactiion_Load(object sender, EventArgs e)
         {
+            Cal_Date();
             ad = new MySqlDataAdapter("Select id, concat(first_name,' ',middle_name,' ',last_name) as name, current_subscrp_id from stud_profile where branch_id = " + SysBase.frmSysDashboard.profile_id + " and status = '1'", conn);
             ad.Fill(dt);
             for(int i = 0; i < dt.Rows.Count; i++)
