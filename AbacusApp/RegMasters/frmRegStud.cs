@@ -1,5 +1,7 @@
 ﻿using AbacusApp.SysBase;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using Org.BouncyCastle.Utilities.Collections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,13 +110,44 @@ namespace AbacusApp.RegMasters
                     }
                 }
             }
-            MessageBox.Show(head_str + "  " + amt_str);
             conn.Open();
-            cmd = new MySqlCommand("Insert into trans_master (cand_id, cand_name, cand_role, total_fees, discount, net_fees, rmk, head_str, amt_str) values(" + int.Parse(dt3.Rows[0].ItemArray[0].ToString()) + ",'" + txt_firstName.Text + " " + txt_middleName.Text + " " + txt_lastName.Text + "', '0', " + float.Parse(txt_total.Text) + "," + float.Parse(txt_discount.Text) + ","+ float.Parse(txt_netBalence.Text) +",'"+ txt_rmk.Text + "','" + head_str + "','" + amt_str + "'", conn);
+            cmd = new MySqlCommand("INSERT INTO trans_master (cand_id, cand_name, cand_role, total_fees, discount, net_fees, rmk, head_str, amt_str) VALUES(" + int.Parse(dt3.Rows[0].ItemArray[0].ToString()) + ",'" + txt_firstName.Text + " " + txt_middleName.Text + " " + txt_lastName.Text + "','0'," + float.Parse(txt_total.Text) + "," + float.Parse(txt_discount.Text) + "," + float.Parse(txt_netBalence.Text) + ",'" + txt_rmk.Text + "','" + head_str + "','" + amt_str + "')", conn);
+            
             cmd.ExecuteNonQuery();
             cmd.Dispose();
+            conn.Close();
 
             //cmd = new MySqlCommand("Insert into subscrp_log (subscrp_id, stud_profile_id, trans_id, subscrp_mode, status, )");
+        }
+
+        public void Subsrp_Entry()
+        {
+            string s2 = "SELECT DATE_FORMAT(DATE_ADD(CURDATE(), INTERVAL 30 DAY), '%Y-%m-%d') AS '30 Days After'";
+            DataTable d2 = new DataTable();
+            ad = new MySqlDataAdapter(s2, conn);
+            ad.Fill(d2);
+            ad.Dispose();
+
+            string dateStr = d2.Rows[0]["30 Days After"].ToString();
+
+            DateTime date = DateTime.Parse(dateStr);
+
+            string formattedDate = date.ToString("yyyy-MM-dd");
+
+            DataTable d3 = new DataTable();
+            ad = new MySqlDataAdapter("select MAX(id) from trans_master where cand_id = "+ int.Parse(dt3.Rows[0].ItemArray[0].ToString()) +"" , conn);
+            ad.Fill(d3);
+
+            Double a = Double.Parse(txt_netBalence.Text);
+            Double b = Double.Parse(txt_paid.Text);
+            Double ans = a - b;
+
+            conn.Open();
+            string sql = "INSERT INTO subscrp_log (subscrp_id, stud_profile_id, trans_id, subscrp_mode, status, start_date, end_date, balc_amt) VALUES (" + (cmb_lvl.SelectedIndex + 1) + "," + int.Parse(dt3.Rows[0].ItemArray[0].ToString()) + "," + int.Parse(d3.Rows[0].ItemArray[0].ToString()) + ",'Enrollment','1',CURDATE(),'" + formattedDate + "'," + ans.ToString("0.00") + ")";
+            cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            conn.Close();
         }
 
         private void btn_register_Click(object sender, EventArgs e)
@@ -134,7 +167,7 @@ namespace AbacusApp.RegMasters
             }
             
             String que = "INSERT INTO stud_profile (first_name, middle_name, last_name, contact_no, email_id, addr, gender, pwd, branch_id, city_name, current_subscrp_id, status) " +
-            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.profile_id + ",'" + txt_city.Text + "'," + 1 + ",'" + 1 + "')";
+            "values ('" + txt_firstName.Text + "','" + txt_middleName.Text + "','" + txt_lastName.Text + "','" + txt_contactNo.Text + "','" + txt_email.Text + "','" + txt_addr.Text + "','" + s + "','" + 12345 + "'," + frmSysDashboard.profile_id + ",'" + txt_city.Text + "'," + (cmb_lvl.SelectedIndex + 1) + ",'" + 1 + "')";
             conn.Open();
             cmd = new MySqlCommand(que, conn);
             cmd.ExecuteNonQuery();
@@ -143,6 +176,7 @@ namespace AbacusApp.RegMasters
 
             Get_ID();
             Trans_Entey();
+            Subsrp_Entry();
 
 
             String que1 = "Insert into enq_master (name, contact, email, address, status, enq_type, rmk , branch_id) " +
@@ -170,6 +204,7 @@ namespace AbacusApp.RegMasters
             }
 
             txt_total.Text = third.ToString();
+            txt_netBalence.Text = third.ToString();
             total = (int)float.Parse(txt_total.Text);
         }
 
@@ -218,9 +253,28 @@ namespace AbacusApp.RegMasters
             }
         }
 
-        private void txt_netBalence_TextChanged(object sender, EventArgs e)
+        private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txt_paid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_discount_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(txt_discount.Text == "0")
+            {
+                txt_discount.Text = "";
+            }
         }
     }
 }

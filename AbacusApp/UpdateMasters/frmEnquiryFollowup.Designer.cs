@@ -30,7 +30,6 @@
         {
             this.dgv_enqList = new System.Windows.Forms.DataGridView();
             this.pnl_update = new System.Windows.Forms.Panel();
-            this.btn_enquiry = new System.Windows.Forms.Button();
             this.txt_rmk = new System.Windows.Forms.TextBox();
             this.lbn_rmk = new System.Windows.Forms.Label();
             this.btn_procced = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.lbl_update = new System.Windows.Forms.Label();
             this.lbl_lastName = new System.Windows.Forms.Label();
             this.lbl_firstName = new System.Windows.Forms.Label();
+            this.btn_enquiry = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_enqList)).BeginInit();
             this.pnl_update.SuspendLayout();
             this.SuspendLayout();
@@ -93,19 +93,6 @@
             this.pnl_update.Size = new System.Drawing.Size(852, 203);
             this.pnl_update.TabIndex = 1;
             // 
-            // btn_enquiry
-            // 
-            this.btn_enquiry.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_enquiry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_enquiry.Location = new System.Drawing.Point(410, 434);
-            this.btn_enquiry.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_enquiry.Name = "btn_enquiry";
-            this.btn_enquiry.Size = new System.Drawing.Size(133, 29);
-            this.btn_enquiry.TabIndex = 14;
-            this.btn_enquiry.Text = "Enquiry";
-            this.btn_enquiry.UseVisualStyleBackColor = true;
-            this.btn_enquiry.Click += new System.EventHandler(this.btn_enquiry_Click);
-            // 
             // txt_rmk
             // 
             this.txt_rmk.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -131,7 +118,7 @@
             // 
             this.btn_procced.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_procced.Location = new System.Drawing.Point(565, 149);
-            this.btn_procced.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_procced.Margin = new System.Windows.Forms.Padding(0);
             this.btn_procced.Name = "btn_procced";
             this.btn_procced.Size = new System.Drawing.Size(139, 29);
             this.btn_procced.TabIndex = 11;
@@ -143,7 +130,7 @@
             // 
             this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_update.Location = new System.Drawing.Point(431, 149);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(0);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 29);
             this.btn_update.TabIndex = 10;
@@ -261,6 +248,19 @@
             this.lbl_firstName.Size = new System.Drawing.Size(70, 15);
             this.lbl_firstName.TabIndex = 0;
             this.lbl_firstName.Text = "First Name :";
+            // 
+            // btn_enquiry
+            // 
+            this.btn_enquiry.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_enquiry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_enquiry.Location = new System.Drawing.Point(386, 428);
+            this.btn_enquiry.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_enquiry.Name = "btn_enquiry";
+            this.btn_enquiry.Size = new System.Drawing.Size(133, 35);
+            this.btn_enquiry.TabIndex = 14;
+            this.btn_enquiry.Text = "Enquiry";
+            this.btn_enquiry.UseVisualStyleBackColor = true;
+            this.btn_enquiry.Click += new System.EventHandler(this.btn_enquiry_Click);
             // 
             // frmEnquiryFollowup
             // 

@@ -68,5 +68,14 @@ namespace AbacusApp.SysBase
             trac.ShowDialog();
             trac.Dispose();
         }
+
+        private void btn_exam_Click(object sender, EventArgs e)
+        {
+            Masters.frmSysExams exam = new Masters.frmSysExams();
+            exam.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            exam.StartPosition = FormStartPosition.CenterParent;
+            exam.ShowDialog();
+            exam.Dispose();
+        }
     }
 }

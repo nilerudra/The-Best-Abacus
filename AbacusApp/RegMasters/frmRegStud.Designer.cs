@@ -62,6 +62,8 @@
             this.cmb_lvl = new System.Windows.Forms.ComboBox();
             this.lbl_rmk = new System.Windows.Forms.Label();
             this.txt_rmk = new System.Windows.Forms.TextBox();
+            this.lbl_paid = new System.Windows.Forms.Label();
+            this.txt_paid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             // 
             this.lbl_firstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_firstName.AutoSize = true;
-            this.lbl_firstName.Location = new System.Drawing.Point(36, 56);
+            this.lbl_firstName.Location = new System.Drawing.Point(36, 54);
             this.lbl_firstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_firstName.Name = "lbl_firstName";
             this.lbl_firstName.Size = new System.Drawing.Size(70, 15);
@@ -80,7 +82,7 @@
             // 
             this.lbl_midName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_midName.AutoSize = true;
-            this.lbl_midName.Location = new System.Drawing.Point(24, 87);
+            this.lbl_midName.Location = new System.Drawing.Point(24, 85);
             this.lbl_midName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_midName.Name = "lbl_midName";
             this.lbl_midName.Size = new System.Drawing.Size(85, 15);
@@ -91,7 +93,7 @@
             // 
             this.lbl_lastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_lastName.AutoSize = true;
-            this.lbl_lastName.Location = new System.Drawing.Point(40, 119);
+            this.lbl_lastName.Location = new System.Drawing.Point(40, 117);
             this.lbl_lastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_lastName.Name = "lbl_lastName";
             this.lbl_lastName.Size = new System.Drawing.Size(69, 15);
@@ -102,7 +104,7 @@
             // 
             this.lbl_contact.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_contact.AutoSize = true;
-            this.lbl_contact.Location = new System.Drawing.Point(411, 55);
+            this.lbl_contact.Location = new System.Drawing.Point(411, 53);
             this.lbl_contact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_contact.Name = "lbl_contact";
             this.lbl_contact.Size = new System.Drawing.Size(74, 15);
@@ -113,7 +115,7 @@
             // 
             this.lbl_email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(432, 87);
+            this.lbl_email.Location = new System.Drawing.Point(432, 85);
             this.lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(53, 15);
@@ -124,7 +126,7 @@
             // 
             this.lbl_addr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_addr.AutoSize = true;
-            this.lbl_addr.Location = new System.Drawing.Point(432, 118);
+            this.lbl_addr.Location = new System.Drawing.Point(432, 116);
             this.lbl_addr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_addr.Name = "lbl_addr";
             this.lbl_addr.Size = new System.Drawing.Size(55, 15);
@@ -135,7 +137,7 @@
             // 
             this.lbl_gender.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_gender.AutoSize = true;
-            this.lbl_gender.Location = new System.Drawing.Point(58, 147);
+            this.lbl_gender.Location = new System.Drawing.Point(58, 145);
             this.lbl_gender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_gender.Name = "lbl_gender";
             this.lbl_gender.Size = new System.Drawing.Size(51, 15);
@@ -146,7 +148,7 @@
             // 
             this.lbl_city.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_city.AutoSize = true;
-            this.lbl_city.Location = new System.Drawing.Point(455, 148);
+            this.lbl_city.Location = new System.Drawing.Point(455, 146);
             this.lbl_city.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_city.Name = "lbl_city";
             this.lbl_city.Size = new System.Drawing.Size(34, 15);
@@ -156,7 +158,7 @@
             // txt_firstName
             // 
             this.txt_firstName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_firstName.Location = new System.Drawing.Point(125, 56);
+            this.txt_firstName.Location = new System.Drawing.Point(125, 54);
             this.txt_firstName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_firstName.Name = "txt_firstName";
             this.txt_firstName.Size = new System.Drawing.Size(262, 23);
@@ -165,7 +167,7 @@
             // txt_middleName
             // 
             this.txt_middleName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_middleName.Location = new System.Drawing.Point(125, 86);
+            this.txt_middleName.Location = new System.Drawing.Point(125, 84);
             this.txt_middleName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_middleName.Name = "txt_middleName";
             this.txt_middleName.Size = new System.Drawing.Size(262, 23);
@@ -174,7 +176,7 @@
             // txt_lastName
             // 
             this.txt_lastName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_lastName.Location = new System.Drawing.Point(125, 116);
+            this.txt_lastName.Location = new System.Drawing.Point(125, 114);
             this.txt_lastName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(262, 23);
@@ -183,7 +185,7 @@
             // txt_contactNo
             // 
             this.txt_contactNo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_contactNo.Location = new System.Drawing.Point(502, 53);
+            this.txt_contactNo.Location = new System.Drawing.Point(502, 51);
             this.txt_contactNo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_contactNo.Name = "txt_contactNo";
             this.txt_contactNo.Size = new System.Drawing.Size(262, 23);
@@ -193,7 +195,7 @@
             // 
             this.rbtn_male.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtn_male.AutoSize = true;
-            this.rbtn_male.Location = new System.Drawing.Point(125, 145);
+            this.rbtn_male.Location = new System.Drawing.Point(125, 143);
             this.rbtn_male.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rbtn_male.Name = "rbtn_male";
             this.rbtn_male.Size = new System.Drawing.Size(51, 19);
@@ -206,7 +208,7 @@
             // 
             this.rbtn_female.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtn_female.AutoSize = true;
-            this.rbtn_female.Location = new System.Drawing.Point(221, 145);
+            this.rbtn_female.Location = new System.Drawing.Point(221, 143);
             this.rbtn_female.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rbtn_female.Name = "rbtn_female";
             this.rbtn_female.Size = new System.Drawing.Size(63, 19);
@@ -219,7 +221,7 @@
             // 
             this.rbtn_other.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtn_other.AutoSize = true;
-            this.rbtn_other.Location = new System.Drawing.Point(329, 145);
+            this.rbtn_other.Location = new System.Drawing.Point(329, 143);
             this.rbtn_other.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rbtn_other.Name = "rbtn_other";
             this.rbtn_other.Size = new System.Drawing.Size(55, 19);
@@ -231,7 +233,7 @@
             // txt_email
             // 
             this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_email.Location = new System.Drawing.Point(502, 86);
+            this.txt_email.Location = new System.Drawing.Point(502, 84);
             this.txt_email.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(262, 23);
@@ -240,7 +242,7 @@
             // txt_addr
             // 
             this.txt_addr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_addr.Location = new System.Drawing.Point(502, 117);
+            this.txt_addr.Location = new System.Drawing.Point(502, 115);
             this.txt_addr.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_addr.Name = "txt_addr";
             this.txt_addr.Size = new System.Drawing.Size(262, 23);
@@ -249,7 +251,7 @@
             // txt_city
             // 
             this.txt_city.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_city.Location = new System.Drawing.Point(502, 147);
+            this.txt_city.Location = new System.Drawing.Point(502, 145);
             this.txt_city.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_city.Name = "txt_city";
             this.txt_city.Size = new System.Drawing.Size(262, 23);
@@ -258,10 +260,11 @@
             // btn_register
             // 
             this.btn_register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_register.Location = new System.Drawing.Point(651, 422);
+            this.btn_register.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_register.Location = new System.Drawing.Point(659, 456);
             this.btn_register.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_register.Name = "btn_register";
-            this.btn_register.Size = new System.Drawing.Size(113, 29);
+            this.btn_register.Size = new System.Drawing.Size(113, 30);
             this.btn_register.TabIndex = 21;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
@@ -280,10 +283,10 @@
             // 
             // lbl_netAmt
             // 
-            this.lbl_netAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_netAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_netAmt.AutoSize = true;
             this.lbl_netAmt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_netAmt.Location = new System.Drawing.Point(326, 362);
+            this.lbl_netAmt.Location = new System.Drawing.Point(14, 445);
             this.lbl_netAmt.Name = "lbl_netAmt";
             this.lbl_netAmt.Size = new System.Drawing.Size(92, 17);
             this.lbl_netAmt.TabIndex = 29;
@@ -294,7 +297,7 @@
             this.lbl_discount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_discount.AutoSize = true;
             this.lbl_discount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_discount.Location = new System.Drawing.Point(35, 398);
+            this.lbl_discount.Location = new System.Drawing.Point(35, 411);
             this.lbl_discount.Name = "lbl_discount";
             this.lbl_discount.Size = new System.Drawing.Size(71, 17);
             this.lbl_discount.TabIndex = 28;
@@ -305,7 +308,7 @@
             this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_total.Location = new System.Drawing.Point(59, 365);
+            this.lbl_total.Location = new System.Drawing.Point(59, 378);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(47, 17);
             this.lbl_total.TabIndex = 27;
@@ -313,30 +316,31 @@
             // 
             // txt_netBalence
             // 
-            this.txt_netBalence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_netBalence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_netBalence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_netBalence.Location = new System.Drawing.Point(432, 359);
+            this.txt_netBalence.Location = new System.Drawing.Point(125, 444);
             this.txt_netBalence.Margin = new System.Windows.Forms.Padding(0);
             this.txt_netBalence.Name = "txt_netBalence";
             this.txt_netBalence.ReadOnly = true;
-            this.txt_netBalence.Size = new System.Drawing.Size(194, 23);
+            this.txt_netBalence.Size = new System.Drawing.Size(186, 23);
             this.txt_netBalence.TabIndex = 26;
-            this.txt_netBalence.TextChanged += new System.EventHandler(this.txt_netBalence_TextChanged);
             // 
             // txt_discount
             // 
             this.txt_discount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_discount.Location = new System.Drawing.Point(125, 397);
+            this.txt_discount.Location = new System.Drawing.Point(125, 410);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(186, 23);
             this.txt_discount.TabIndex = 25;
+            this.txt_discount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_discount_MouseClick);
             this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
             // 
             // txt_total
             // 
             this.txt_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txt_total.Location = new System.Drawing.Point(125, 362);
+            this.txt_total.Location = new System.Drawing.Point(125, 375);
             this.txt_total.Margin = new System.Windows.Forms.Padding(0);
             this.txt_total.Name = "txt_total";
             this.txt_total.ReadOnly = true;
@@ -365,7 +369,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_fees.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_fees.GridColor = System.Drawing.Color.White;
-            this.dgv_fees.Location = new System.Drawing.Point(12, 214);
+            this.dgv_fees.Location = new System.Drawing.Point(12, 220);
             this.dgv_fees.Name = "dgv_fees";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -389,7 +393,7 @@
             this.lbl_lvl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_lvl.AutoSize = true;
             this.lbl_lvl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_lvl.Location = new System.Drawing.Point(35, 172);
+            this.lbl_lvl.Location = new System.Drawing.Point(35, 170);
             this.lbl_lvl.Name = "lbl_lvl";
             this.lbl_lvl.Size = new System.Drawing.Size(74, 15);
             this.lbl_lvl.TabIndex = 31;
@@ -399,7 +403,7 @@
             // 
             this.cmb_lvl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmb_lvl.FormattingEnabled = true;
-            this.cmb_lvl.Location = new System.Drawing.Point(125, 169);
+            this.cmb_lvl.Location = new System.Drawing.Point(125, 167);
             this.cmb_lvl.Name = "cmb_lvl";
             this.cmb_lvl.Size = new System.Drawing.Size(262, 23);
             this.cmb_lvl.TabIndex = 30;
@@ -407,10 +411,10 @@
             // 
             // lbl_rmk
             // 
-            this.lbl_rmk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_rmk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_rmk.AutoSize = true;
             this.lbl_rmk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_rmk.Location = new System.Drawing.Point(356, 398);
+            this.lbl_rmk.Location = new System.Drawing.Point(356, 411);
             this.lbl_rmk.Name = "lbl_rmk";
             this.lbl_rmk.Size = new System.Drawing.Size(62, 17);
             this.lbl_rmk.TabIndex = 33;
@@ -418,18 +422,40 @@
             // 
             // txt_rmk
             // 
-            this.txt_rmk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_rmk.Location = new System.Drawing.Point(432, 397);
+            this.txt_rmk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_rmk.Location = new System.Drawing.Point(432, 410);
             this.txt_rmk.Multiline = true;
             this.txt_rmk.Name = "txt_rmk";
-            this.txt_rmk.Size = new System.Drawing.Size(194, 52);
+            this.txt_rmk.Size = new System.Drawing.Size(194, 57);
             this.txt_rmk.TabIndex = 32;
+            // 
+            // lbl_paid
+            // 
+            this.lbl_paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_paid.AutoSize = true;
+            this.lbl_paid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_paid.Location = new System.Drawing.Point(375, 378);
+            this.lbl_paid.Name = "lbl_paid";
+            this.lbl_paid.Size = new System.Drawing.Size(43, 17);
+            this.lbl_paid.TabIndex = 35;
+            this.lbl_paid.Text = "Paid :";
+            // 
+            // txt_paid
+            // 
+            this.txt_paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_paid.Location = new System.Drawing.Point(432, 375);
+            this.txt_paid.Name = "txt_paid";
+            this.txt_paid.Size = new System.Drawing.Size(194, 23);
+            this.txt_paid.TabIndex = 34;
+            this.txt_paid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_paid_KeyPress);
             // 
             // frmRegStud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 496);
+            this.Controls.Add(this.lbl_paid);
+            this.Controls.Add(this.txt_paid);
             this.Controls.Add(this.lbl_rmk);
             this.Controls.Add(this.txt_rmk);
             this.Controls.Add(this.lbl_lvl);
@@ -509,5 +535,7 @@
         private ComboBox cmb_lvl;
         private Label lbl_rmk;
         private TextBox txt_rmk;
+        private Label lbl_paid;
+        private TextBox txt_paid;
     }
 }

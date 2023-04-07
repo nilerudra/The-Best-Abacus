@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbo_studName = new System.Windows.Forms.ComboBox();
             this.lbl_selectStud = new System.Windows.Forms.Label();
             this.dgv_fees = new System.Windows.Forms.DataGridView();
@@ -46,12 +46,6 @@
             this.cb_changeLvl = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_days = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.expire_date = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,28 +86,28 @@
             this.dgv_fees.BackgroundColor = System.Drawing.Color.White;
             this.dgv_fees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgv_fees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_fees.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_fees.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_fees.GridColor = System.Drawing.Color.White;
             this.dgv_fees.Location = new System.Drawing.Point(12, 153);
             this.dgv_fees.Name = "dgv_fees";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_fees.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_fees.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_fees.RowHeadersWidth = 62;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_fees.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_fees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_fees.RowTemplate.Height = 25;
             this.dgv_fees.Size = new System.Drawing.Size(760, 120);
             this.dgv_fees.TabIndex = 2;
@@ -253,83 +247,11 @@
             this.textBox1.Size = new System.Drawing.Size(155, 23);
             this.textBox1.TabIndex = 15;
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(157, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 21);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "The Current Level is ";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(316, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 21);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "..... ,";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(354, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 21);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "will expire in ";
-            // 
-            // lbl_days
-            // 
-            this.lbl_days.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_days.AutoSize = true;
-            this.lbl_days.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_days.Location = new System.Drawing.Point(460, 99);
-            this.lbl_days.Name = "lbl_days";
-            this.lbl_days.Size = new System.Drawing.Size(22, 21);
-            this.lbl_days.TabIndex = 20;
-            this.lbl_days.Text = "....";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(489, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 21);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "days. on date";
-            // 
-            // expire_date
-            // 
-            this.expire_date.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.expire_date.AutoSize = true;
-            this.expire_date.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.expire_date.Location = new System.Drawing.Point(594, 99);
-            this.expire_date.Name = "expire_date";
-            this.expire_date.Size = new System.Drawing.Size(34, 21);
-            this.expire_date.TabIndex = 22;
-            this.expire_date.Text = "........";
-            // 
             // frmSystransactiion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.expire_date);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbl_days);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cb_changeLvl);
@@ -376,11 +298,5 @@
         private CheckBox cb_changeLvl;
         private Label label1;
         private TextBox textBox1;
-        private Label label2;
-        private Label label4;
-        private Label label5;
-        private Label lbl_days;
-        private Label label7;
-        private Label expire_date;
     }
 }

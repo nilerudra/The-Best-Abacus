@@ -83,15 +83,15 @@ namespace AbacusApp.Masters
 
                 if (int.Parse(d3.Rows[0].ItemArray[0].ToString()) < 0)
                 {
-                    lbl_days.Text = "0";
+                    //lbl_days.Text = "0";
                 }
                 else
                 {
                     if (d2.Rows.Count > 0)
                     {
                         String result = d2.Rows[0].ItemArray[0].ToString();
-                        expire_date.Text = result;
-                        lbl_days.Text = d3.Rows[0].ItemArray[0].ToString();
+                       // expire_date.Text = result;
+                       // lbl_days.Text = d3.Rows[0].ItemArray[0].ToString();
                     }
                     else
                     {

@@ -55,7 +55,7 @@ namespace AbacusApp.UpdateMasters
             String rmk = dt.Rows[e.RowIndex].ItemArray[6].ToString();
             pnl_update.Visible = true;
             String na = dt.Rows[e.RowIndex].ItemArray[1].ToString();
-            String[] ar =na.Split(" ");
+            String[] ar = na.Split(" ");
             txt_firstName.Text = ar[0];
             txt_lastName.Text = ar[1];
             txt_contactNo.Text = dt.Rows[e.RowIndex].ItemArray[3].ToString();
@@ -66,7 +66,7 @@ namespace AbacusApp.UpdateMasters
             }
             else
             {
-                txt_rmk.Text = rmk;
+                txt_rmk.Text = "";
             }
         }
 
@@ -113,8 +113,15 @@ namespace AbacusApp.UpdateMasters
 
         private void btn_procced_Click(object sender, EventArgs e)
         {
+            if (dt.Rows[index].ItemArray[6].ToString().Equals(""))
+            {
+                txt_rmk.Text = "";
+            }
+
             frmAdmission fd = new frmAdmission();
-            fd.getData(dt, index, txt_rmk.Text, this);
+            fd.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            fd.StartPosition = FormStartPosition.CenterParent;
+            fd.getData(dt, index, txt_rmk.Text);
             fd.ShowDialog();
             fd.Dispose();
         }
@@ -127,6 +134,8 @@ namespace AbacusApp.UpdateMasters
         private void btn_enquiry_Click(object sender, EventArgs e)
         {
             frmRegEnquiry enquiry = new frmRegEnquiry();
+            enquiry.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            enquiry.StartPosition = FormStartPosition.CenterParent;
             enquiry.ShowDialog();
             enquiry.Dispose();
         }
