@@ -241,3 +241,4 @@ D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\Aba
 D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSystransactiion.resources
 D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.menuDashboards.frmPublicConnectDash.resources
 C:\Users\ADITYA RAMESH NIKAM\Desktop\learnGit\demoabacus\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysExams.resources
+D:\OneDrive\Documents\git\The-Best-Abacus\AbacusApp\obj\Debug\net6.0-windows\AbacusApp.Masters.frmSysExams.resources

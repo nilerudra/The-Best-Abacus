@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AbacusApp.Masters
 {
@@ -19,6 +20,7 @@ namespace AbacusApp.Masters
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
         DataTable dt2 = new DataTable();
+        DataTable data = new DataTable();
 
         public frmSysExams()
         {
@@ -72,7 +74,6 @@ namespace AbacusApp.Masters
                     }
                 }
 
-                DataTable data = new DataTable();
                 data = dt2.Clone();
                 data.Clear();
 
@@ -91,21 +92,7 @@ namespace AbacusApp.Masters
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            string searchKeyword = txt_search.Text.ToLower();
-
-            foreach (DataGridViewRow row in dgv_Student.Rows)
-            {
-                string cellValue = row.Cells[1].Value.ToString().ToLower();
-
-                if (row.Cells[1].ToString().ToLower().Contains(searchKeyword) || row.Cells[2].ToString().ToLower().Contains(searchKeyword) || row.Cells[3].ToString().ToLower().Contains(searchKeyword))
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
-            }
+            (dgv_Student.DataSource as DataTable).DefaultView.RowFilter = string.Format("first_name LIKE '%{0}%' OR middle_name LIKE '%{0}%' OR last_name LIKE '%{0}%'", txt_search.Text);
         }
     }
 }
