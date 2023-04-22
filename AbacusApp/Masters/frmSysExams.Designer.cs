@@ -68,8 +68,7 @@
             this.dgv_Student.AllowUserToDeleteRows = false;
             this.dgv_Student.AllowUserToResizeColumns = false;
             this.dgv_Student.AllowUserToResizeRows = false;
-            this.dgv_Student.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgv_Student.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Student.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Student.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -92,7 +91,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Student.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Student.RowTemplate.Height = 41;
-            this.dgv_Student.Size = new System.Drawing.Size(738, 324);
+            this.dgv_Student.Size = new System.Drawing.Size(738, 228);
             this.dgv_Student.TabIndex = 7;
             // 
             // Select
@@ -103,6 +102,7 @@
             // 
             // txt_search
             // 
+            this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_search.Location = new System.Drawing.Point(577, 34);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(186, 23);
@@ -111,6 +111,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(462, 35);

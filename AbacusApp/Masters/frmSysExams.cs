@@ -19,6 +19,7 @@ namespace AbacusApp.Masters
         MySqlDataAdapter ad;
         DataTable dt = new DataTable();
         DataTable dt2 = new DataTable();
+        DataTable data = new DataTable();
 
         public frmSysExams()
         {
@@ -54,12 +55,16 @@ namespace AbacusApp.Masters
 
         private void cmbo_levels_SelectedIndexChanged(object sender, EventArgs e)
         {
+            data.Clear();
+            dgv_Refresh();
+            txt_search.Text = "";
             String s = cmbo_levels.Text;
             int id = -1;
 
             if (s.Equals("ALL"))
             {
                 dgv_Refresh();
+                data = dt2.Clone();
             }
             else
             {
@@ -72,7 +77,6 @@ namespace AbacusApp.Masters
                     }
                 }
 
-                DataTable data = new DataTable();
                 data = dt2.Clone();
                 data.Clear();
 
@@ -93,19 +97,24 @@ namespace AbacusApp.Masters
         {
             string searchKeyword = txt_search.Text.ToLower();
 
-            foreach (DataGridViewRow row in dgv_Student.Rows)
-            {
-                string cellValue = row.Cells[1].Value.ToString().ToLower();
 
-                if (row.Cells[1].ToString().ToLower().Contains(searchKeyword) || row.Cells[2].ToString().ToLower().Contains(searchKeyword) || row.Cells[3].ToString().ToLower().Contains(searchKeyword))
+            DataTable d = new DataTable();
+
+            //MessageBox.Show(data.Rows.Count + "");
+            d = data.Clone();
+            d.Clear();
+
+            for(int i = 0; i < data.Rows.Count; i++)
+            {
+                //MessageBox.Show(searchKeyword + "-" + data.Rows[i].ItemArray[2].ToString().ToLower());
+                if (data.Rows[i].ItemArray[2].ToString().ToLower().Contains(searchKeyword))
                 {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
+                    DataRow row = d.NewRow();
+                    row.ItemArray = data.Rows[i].ItemArray.Clone() as object[];
+                    d.Rows.Add(row);
                 }
             }
+            dgv_Student.DataSource = d;
         }
     }
 }
