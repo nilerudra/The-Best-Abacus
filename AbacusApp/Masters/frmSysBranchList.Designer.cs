@@ -38,6 +38,7 @@ namespace AbacusApp.SysBase
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lsv_branchLs = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lbl_search = new System.Windows.Forms.Label();
             this.tbLayPnl_Branches.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,9 +78,9 @@ namespace AbacusApp.SysBase
             this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_search.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_search.Location = new System.Drawing.Point(463, 35);
+            this.txt_search.Location = new System.Drawing.Point(534, 33);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(263, 25);
+            this.txt_search.Size = new System.Drawing.Size(238, 25);
             this.txt_search.TabIndex = 1;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
@@ -90,7 +91,7 @@ namespace AbacusApp.SysBase
             this.btn_newBranch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btn_newBranch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_newBranch.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_newBranch.Location = new System.Drawing.Point(633, 373);
+            this.btn_newBranch.Location = new System.Drawing.Point(633, 413);
             this.btn_newBranch.Name = "btn_newBranch";
             this.btn_newBranch.Size = new System.Drawing.Size(139, 38);
             this.btn_newBranch.TabIndex = 2;
@@ -119,7 +120,7 @@ namespace AbacusApp.SysBase
             this.lsv_branchLs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lsv_branchLs.Location = new System.Drawing.Point(13, 78);
             this.lsv_branchLs.Name = "lsv_branchLs";
-            this.lsv_branchLs.Size = new System.Drawing.Size(759, 286);
+            this.lsv_branchLs.Size = new System.Drawing.Size(759, 316);
             this.lsv_branchLs.TabIndex = 4;
             this.lsv_branchLs.UseCompatibleStateImageBehavior = false;
             this.lsv_branchLs.DoubleClick += new System.EventHandler(this.lsv_branchLs_DoubleClick);
@@ -132,11 +133,22 @@ namespace AbacusApp.SysBase
             this.imageList1.Images.SetKeyName(0, "branch_active.png");
             this.imageList1.Images.SetKeyName(1, "branch_inactive.png");
             // 
+            // lbl_search
+            // 
+            this.lbl_search.AutoSize = true;
+            this.lbl_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_search.Location = new System.Drawing.Point(461, 33);
+            this.lbl_search.Name = "lbl_search";
+            this.lbl_search.Size = new System.Drawing.Size(64, 21);
+            this.lbl_search.TabIndex = 5;
+            this.lbl_search.Text = "Search :";
+            // 
             // frmSysBranchList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 421);
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.lbl_search);
             this.Controls.Add(this.lsv_branchLs);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_newBranch);
@@ -166,5 +178,6 @@ namespace AbacusApp.SysBase
         private PictureBox pictureBox1;
         private ListView lsv_branchLs;
         private ImageList imageList1;
+        private Label lbl_search;
     }
 }

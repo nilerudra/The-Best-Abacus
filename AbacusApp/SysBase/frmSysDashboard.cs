@@ -77,5 +77,14 @@ namespace AbacusApp.SysBase
             exam.ShowDialog();
             exam.Dispose();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Masters.frmSysComp comp = new Masters.frmSysComp();
+            comp.Size = new Size(this.Size.Width - 100, this.Size.Height - 100);
+            comp.StartPosition = FormStartPosition.CenterParent;
+            comp.ShowDialog();
+            comp.Dispose();
+        }
     }
 }

@@ -10,6 +10,9 @@
     <Compile Update="Masters\frmSysBranchSupport.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Masters\frmSysComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Masters\frmSysContactUs.cs">
       <SubType>Form</SubType>
     </Compile>

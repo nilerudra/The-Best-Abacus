@@ -39,6 +39,7 @@
             this.btn_publicConnect = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btn_trans = new System.Windows.Forms.Button();
+            this.btn_exam = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.btn_exam = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,6 +147,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Controls.Add(this.btn_trans);
             this.flowLayoutPanel1.Controls.Add(this.btn_exam);
+            this.flowLayoutPanel1.Controls.Add(this.button8);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -202,6 +204,23 @@
             this.btn_trans.Text = "Transaction";
             this.btn_trans.UseVisualStyleBackColor = false;
             this.btn_trans.Click += new System.EventHandler(this.btn_trans_Click);
+            // 
+            // btn_exam
+            // 
+            this.btn_exam.BackColor = System.Drawing.Color.Silver;
+            this.btn_exam.FlatAppearance.BorderSize = 0;
+            this.btn_exam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btn_exam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_exam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exam.Location = new System.Drawing.Point(360, 0);
+            this.btn_exam.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_exam.Name = "btn_exam";
+            this.btn_exam.Size = new System.Drawing.Size(120, 40);
+            this.btn_exam.TabIndex = 3;
+            this.btn_exam.TabStop = false;
+            this.btn_exam.Text = "Exam";
+            this.btn_exam.UseVisualStyleBackColor = false;
+            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -357,22 +376,22 @@
             this.button6.Text = "BRANCHES";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // btn_exam
+            // button8
             // 
-            this.btn_exam.BackColor = System.Drawing.Color.Silver;
-            this.btn_exam.FlatAppearance.BorderSize = 0;
-            this.btn_exam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.btn_exam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_exam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exam.Location = new System.Drawing.Point(360, 0);
-            this.btn_exam.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_exam.Name = "btn_exam";
-            this.btn_exam.Size = new System.Drawing.Size(120, 40);
-            this.btn_exam.TabIndex = 3;
-            this.btn_exam.TabStop = false;
-            this.btn_exam.Text = "Exam";
-            this.btn_exam.UseVisualStyleBackColor = false;
-            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
+            this.button8.BackColor = System.Drawing.Color.Silver;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(480, 0);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(120, 40);
+            this.button8.TabIndex = 4;
+            this.button8.TabStop = false;
+            this.button8.Text = "Compitition";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // frmSysDashboard
             // 
@@ -430,5 +449,6 @@
         private Button button7;
         private Button btn_trans;
         private Button btn_exam;
+        private Button button8;
     }
 }

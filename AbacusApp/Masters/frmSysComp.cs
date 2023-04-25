@@ -9,11 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AbacusApp.Masters
 {
-    public partial class frmSysExams : Form
+    public partial class frmSysComp : Form
     {
         MySqlConnection conn = new MySqlConnection("server= 115.96.168.103; port=3306;database=prj130abacus;user=prj130;password=prj130@abacus");
         //MySqlConnection conn = new MySqlConnection("server= localhost; port=3306;database=abacus;user=root;password=nile@064");
@@ -27,7 +26,7 @@ namespace AbacusApp.Masters
         String stud_list = "";
         int qp_set = -1;
 
-        public frmSysExams()
+        public frmSysComp()
         {
             InitializeComponent();
         }
@@ -35,22 +34,23 @@ namespace AbacusApp.Masters
         public void show()
         {
             dt.Clear();
-            String que = "select distinct level , qp_type from qp_set_master where status = '1' and qp_type = 'EXAM SET';";
+            String que = "select distinct level, qp_type from qp_set_master where status = '1' and qp_type = 'COMPITITION SET';";
             ad = new MySqlDataAdapter(que, conn);
             ad.Fill(dt);
         }
 
-        private void frmSysExams_Load(object sender, EventArgs e)
+
+        private void frmSysComp_Load(object sender, EventArgs e)
         {
             show();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cmbo_levels.Items.Add(dt.Rows[i].ItemArray[0].ToString());
             }
-            
+
             dgv_Refresh();
 
-            ad = new MySqlDataAdapter("select id, title, level, qp_type from qp_set_master where status = '1' and qp_type = 'EXAM SET'", conn);
+            ad = new MySqlDataAdapter("select id, title, level, qp_type from qp_set_master where status = '1' and qp_type = 'COMPITITION SET'", conn);
             ad.Fill(d);
 
             for (int i = 0; i < d.Rows.Count; i++)
@@ -83,7 +83,7 @@ namespace AbacusApp.Masters
                 dgv_Refresh();
                 data = dt2.Clone();
                 cmb_paper_Ls.Items.Clear();
-                for(int i = 0; i < d.Rows.Count; i++)
+                for (int i = 0; i < d.Rows.Count; i++)
                 {
                     cmb_paper_Ls.Items.Add(d.Rows[i].ItemArray[1].ToString());
                 }
@@ -98,7 +98,7 @@ namespace AbacusApp.Masters
                         break;
                     }
                 }
-                
+
                 data = dt2.Clone();
                 data.Clear();
 
@@ -115,8 +115,10 @@ namespace AbacusApp.Masters
 
 
 
+
+
                 cmb_paper_Ls.Items.Clear();
-                for(int i = 0; i < d.Rows.Count; i++) 
+                for (int i = 0; i < d.Rows.Count; i++)
                 {
                     if (s == d.Rows[i].ItemArray[2].ToString())
                     {
@@ -131,15 +133,14 @@ namespace AbacusApp.Masters
             (dgv_Student.DataSource as DataTable).DefaultView.RowFilter = string.Format("first_name LIKE '%{0}%' OR middle_name LIKE '%{0}%' OR last_name LIKE '%{0}%'", txt_search.Text);
 
             String[] s = stud_list.Split(",");
-            
-            for(int i = 0; i < dgv_Student.Rows.Count; i++)
+
+            for (int i = 0; i < dgv_Student.Rows.Count; i++)
             {
                 if (s.Contains(dgv_Student.Rows[i].Cells[1].Value.ToString()))
                 {
                     dgv_Student.Rows[i].Cells[0].Value = true;
                 }
             }
-
         }
 
         private void dgv_Student_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -160,7 +161,7 @@ namespace AbacusApp.Masters
                     }
                     else
                     {
-                        if(!stud_list.Contains(dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString()))
+                        if (!stud_list.Contains(dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString()))
                         {
                             stud_list = stud_list + "," + dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
                         }
@@ -169,13 +170,6 @@ namespace AbacusApp.Masters
                 else
                 {
                     // Checkbox is unchecked
-                    /*if (!stud_list.Equals(""))
-                    {
-                        if(stud_list.Contains(dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString()))
-                        {
-                            stud_list = stud_list.Replace(dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString(), "");
-                        }
-                    }*/
                     if (!stud_list.Equals(""))
                     {
                         string idToRemove = dgv_Student[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
@@ -194,17 +188,19 @@ namespace AbacusApp.Masters
             }
             else
             {
-                conn.Open(); 
-                string s = "INSERT INTO exam_details (stud_list, qp_set, status, end_date, reg_usr) VALUES ('" + stud_list.Replace("'", "''") + "', " + qp_set + ", '1', '" + dtp_end_date.Value.ToString("yyyy-MM-dd") + "', " + frmSysDashboard.profile_id + ")";
+                conn.Open();
+                string s = "INSERT INTO comp_details (stud_list, qp_set, status, end_date) VALUES ('" + stud_list.Replace("'", "''") + "', " + qp_set + ", '1', '" + dtp_end_date.Value.ToString("yyyy-MM-dd") + "')";
                 cmd = new MySqlCommand(s, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
+                MessageBox.Show("Compitition Set");
             }
         }
 
         private void cmb_paper_Ls_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for(int i = 0; i < d.Rows.Count; i++)
+            for (int i = 0; i < d.Rows.Count; i++)
             {
                 if (d.Rows[i].ItemArray[1].ToString().Equals(cmb_paper_Ls.Text))
                 {
